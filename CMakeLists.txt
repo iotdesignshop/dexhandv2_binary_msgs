@@ -43,7 +43,7 @@ if (DEFINED RP2040_BUILD)
     add_custom_command(
         OUTPUT ${PROTO_SRCS} ${PROTO_HDRS}
         COMMAND python3
-        ARGS ${CMAKE_CURRENT_SOURCE_DIR}/nanopb/generator/nanopb_generator.py ${PROTO_FILES} -D ${PROTO_OUTPUT_DIR} -I ${CMAKE_CURRENT_SOURCE_DIR}/proto
+        ARGS ${CMAKE_CURRENT_SOURCE_DIR}/nanopb/generator/nanopb_generator.py ${PROTO_FILES} -D ${PROTO_OUTPUT_DIR} -I ${CMAKE_CURRENT_SOURCE_DIR}/proto -S .cc
         DEPENDS ${PROTO_FILES}
     )
 else()
@@ -56,10 +56,17 @@ else()
     )
 endif()
 
+# RP2040 build also needs to compile in some source from nanopb
+if (DEFINED RP2040_BUILD)
+    file(GLOB_RECURSE NANOPB_FILES "${CMAKE_CURRENT_SOURCE_DIR}/nanopb/pb_*.c")
+endif()
+
 add_library(dexhandv2_binary_msgs STATIC 
-    src/dexhand_bm.cpp
     ${PROTO_SRCS}
-    ${PROTO_HDRS})
+    ${PROTO_HDRS}
+    ${NANOPB_FILES})
+
+
 
 
 message(STATUS "PROTO_SRC_DIR: ${PROTO_SRC_DIR}")
