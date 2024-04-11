@@ -19,6 +19,8 @@ else()
     include_directories(${Protobuf_INCLUDE_DIRS})
 
     set(PROTO_OUTPUT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/generated/client-cpp)
+    set(PROTO_PYTHON_OUTPUT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/generated/client-python)
+    file(MAKE_DIRECTORY ${PROTO_PYTHON_OUTPUT_DIR})
 endif()
 
 file(MAKE_DIRECTORY ${PROTO_OUTPUT_DIR})
@@ -32,6 +34,9 @@ foreach(PROTO_FILE ${PROTO_FILES})
     string(REPLACE ".proto" ".pb" PROTO_FILE_NAME ${PROTO_FILE_NAME})
     list(APPEND PROTO_SRCS "${PROTO_OUTPUT_DIR}/${PROTO_FILE_NAME}.cc")
     list(APPEND PROTO_HDRS "${PROTO_OUTPUT_DIR}/${PROTO_FILE_NAME}.h")
+if (NOT DEFINED RP2040_BUILD)
+    list(APPEND PROTO_PYTHON "${PROTO_PYTHON_OUTPUT_DIR}/${PROTO_FILE_NAME}_pb2.py")
+endif()
 endforeach()
 
 # Include the generated files in the project
@@ -51,7 +56,7 @@ else()
     add_custom_command(
         OUTPUT ${PROTO_SRCS} ${PROTO_HDRS}
         COMMAND ${Protobuf_PROTOC_EXECUTABLE}
-        ARGS --cpp_out=${PROTO_OUTPUT_DIR} -I ${CMAKE_CURRENT_SOURCE_DIR}/proto ${PROTO_FILES}
+        ARGS --cpp_out=${PROTO_OUTPUT_DIR} --python_out ${PROTO_PYTHON_OUTPUT_DIR} -I ${CMAKE_CURRENT_SOURCE_DIR}/proto ${PROTO_FILES}
         DEPENDS ${PROTO_FILES}
     )
 endif()
