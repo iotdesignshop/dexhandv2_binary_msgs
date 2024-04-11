@@ -4,11 +4,18 @@ project(dexhand_connect VERSION 0.1.0 LANGUAGES C CXX)
 include(CTest)
 enable_testing()
 
-#Find the required protobuf package
-find_package(Protobuf REQUIRED)
+# Is this a RP2040 Build or a Client Build? Look for a RP2040_BUILD variable
+if (DEFINED RP2040_BUILD)
+    message(STATUS "RP2040 Build")
+else()
+    message(STATUS "Client Build")
+    
+    #Find the required protobuf package
+    find_package(Protobuf REQUIRED)
 
-# Include protobuf directories
-include_directories(${Protobuf_INCLUDE_DIRS})
+    # Include protobuf directories
+    include_directories(${Protobuf_INCLUDE_DIRS})
+endif()
 
 # Define files
 set(PROTO_SRC_DIR ${CMAKE_CURRENT_BINARY_DIR})
