@@ -8,7 +8,8 @@ message ServoStatus
     optional uint32 status = 2;
     optional uint32 voltage = 3;
     optional uint32 temperature = 4;
-    optional uint32  position = 5;
+    optional uint32 position = 5;
     optional sint32 speed = 6;
     optional sint32 load = 7;
+    
 }
