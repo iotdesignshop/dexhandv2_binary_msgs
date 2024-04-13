@@ -1,0 +1,1 @@
+dexhand.ServoStatusList.servos     max_count:20         // Maximum of 20 servos per message

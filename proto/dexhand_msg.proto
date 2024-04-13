@@ -2,6 +2,17 @@ syntax = "proto2";
 
 package dexhand;
 
+/* ServoStatus
+ * ServoStatus is a message that contains the full status of a servo
+ * 
+ * uint32 servoId: The id of the servo
+ * uint32 status: The status of the servo
+ * uint32 voltage: The voltage of the servo
+ * uint32 temperature: The temperature of the servo
+ * uint32 position: The position of the servo
+ * sint32 speed: The speed of the servo
+ * sint32 load: The load of the servo
+ */
 message ServoStatus
 {
     optional uint32 servoId = 1;
@@ -10,6 +21,15 @@ message ServoStatus
     optional uint32 temperature = 4;
     optional uint32 position = 5;
     optional sint32 speed = 6;
-    optional sint32 load = 7;
-    
+    optional sint32 load = 7;   
+}
+
+/* ServoStatusList
+ * ServoStatusList is a message that contains a list of ServoStatus messages
+ * 
+ * repeated ServoStatus servoStatus: A list of ServoStatus messages
+ */
+message ServoStatusList
+{
+    repeated ServoStatus servos = 1;
 }

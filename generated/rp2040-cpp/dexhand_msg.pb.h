@@ -10,6 +10,16 @@
 #endif
 
 /* Struct definitions */
+/* ServoStatus
+ ServoStatus is a message that contains the full status of a servo
+ 
+ uint32 servoId: The id of the servo
+ uint32 status: The status of the servo
+ uint32 voltage: The voltage of the servo
+ uint32 temperature: The temperature of the servo
+ uint32 position: The position of the servo
+ sint32 speed: The speed of the servo
+ sint32 load: The load of the servo */
 typedef struct _dexhand_ServoStatus {
     bool has_servoId;
     uint32_t servoId;
@@ -27,6 +37,15 @@ typedef struct _dexhand_ServoStatus {
     int32_t load;
 } dexhand_ServoStatus;
 
+/* ServoStatusList
+ ServoStatusList is a message that contains a list of ServoStatus messages
+ 
+ repeated ServoStatus servoStatus: A list of ServoStatus messages */
+typedef struct _dexhand_ServoStatusList {
+    pb_size_t servos_count;
+    dexhand_ServoStatus servos[20];
+} dexhand_ServoStatusList;
+
 
 #ifdef __cplusplus
 extern "C" {
@@ -34,7 +53,9 @@ extern "C" {
 
 /* Initializer values for message structs */
 #define dexhand_ServoStatus_init_default         {false, 0, false, 0, false, 0, false, 0, false, 0, false, 0, false, 0}
+#define dexhand_ServoStatusList_init_default     {0, {dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default}}
 #define dexhand_ServoStatus_init_zero            {false, 0, false, 0, false, 0, false, 0, false, 0, false, 0, false, 0}
+#define dexhand_ServoStatusList_init_zero        {0, {dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero}}
 
 /* Field tags (for use in manual encoding/decoding) */
 #define dexhand_ServoStatus_servoId_tag          1
@@ -44,6 +65,7 @@ extern "C" {
 #define dexhand_ServoStatus_position_tag         5
 #define dexhand_ServoStatus_speed_tag            6
 #define dexhand_ServoStatus_load_tag             7
+#define dexhand_ServoStatusList_servos_tag       1
 
 /* Struct field encoding specification for nanopb */
 #define dexhand_ServoStatus_FIELDLIST(X, a) \
@@ -57,13 +79,22 @@ X(a, STATIC,   OPTIONAL, SINT32,   load,              7)
 #define dexhand_ServoStatus_CALLBACK NULL
 #define dexhand_ServoStatus_DEFAULT NULL
 
+#define dexhand_ServoStatusList_FIELDLIST(X, a) \
+X(a, STATIC,   REPEATED, MESSAGE,  servos,            1)
+#define dexhand_ServoStatusList_CALLBACK NULL
+#define dexhand_ServoStatusList_DEFAULT NULL
+#define dexhand_ServoStatusList_servos_MSGTYPE dexhand_ServoStatus
+
 extern const pb_msgdesc_t dexhand_ServoStatus_msg;
+extern const pb_msgdesc_t dexhand_ServoStatusList_msg;
 
 /* Defines for backwards compatibility with code written before nanopb-0.4.0 */
 #define dexhand_ServoStatus_fields &dexhand_ServoStatus_msg
+#define dexhand_ServoStatusList_fields &dexhand_ServoStatusList_msg
 
 /* Maximum encoded size of messages (where known) */
-#define DEXHAND_DEXHAND_MSG_PB_H_MAX_SIZE        dexhand_ServoStatus_size
+#define DEXHAND_DEXHAND_MSG_PB_H_MAX_SIZE        dexhand_ServoStatusList_size
+#define dexhand_ServoStatusList_size             880
 #define dexhand_ServoStatus_size                 42
 
 #ifdef __cplusplus

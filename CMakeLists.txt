@@ -27,6 +27,8 @@ file(MAKE_DIRECTORY ${PROTO_OUTPUT_DIR})
 
 # Define files
 file(GLOB_RECURSE PROTO_FILES "${CMAKE_CURRENT_SOURCE_DIR}/proto/*.proto")
+file(GLOB_RECURSE PROTO_OPTIONS "${CMAKE_CURRENT_SOURCE_DIR}/proto/*.options")
+
 
 # Create generated file names
 foreach(PROTO_FILE ${PROTO_FILES})
@@ -49,7 +51,7 @@ if (DEFINED RP2040_BUILD)
         OUTPUT ${PROTO_SRCS} ${PROTO_HDRS}
         COMMAND python3
         ARGS ${CMAKE_CURRENT_SOURCE_DIR}/nanopb/generator/nanopb_generator.py ${PROTO_FILES} -D ${PROTO_OUTPUT_DIR} -I ${CMAKE_CURRENT_SOURCE_DIR}/proto -S .cc
-        DEPENDS ${PROTO_FILES}
+        DEPENDS ${PROTO_FILES} ${PROTO_OPTIONS}
     )
 else()
     # Custom command to run protoc into custom output directory
