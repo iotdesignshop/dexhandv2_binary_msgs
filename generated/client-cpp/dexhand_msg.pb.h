@@ -47,7 +47,7 @@ struct TableStruct_dexhand_5fmsg_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[1]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[2]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -58,9 +58,13 @@ namespace dexhand {
 class ServoStatus;
 class ServoStatusDefaultTypeInternal;
 extern ServoStatusDefaultTypeInternal _ServoStatus_default_instance_;
+class ServoStatusList;
+class ServoStatusListDefaultTypeInternal;
+extern ServoStatusListDefaultTypeInternal _ServoStatusList_default_instance_;
 }  // namespace dexhand
 PROTOBUF_NAMESPACE_OPEN
 template<> ::dexhand::ServoStatus* Arena::CreateMaybeMessage<::dexhand::ServoStatus>(Arena*);
+template<> ::dexhand::ServoStatusList* Arena::CreateMaybeMessage<::dexhand::ServoStatusList>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace dexhand {
 
@@ -303,6 +307,159 @@ class ServoStatus PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::int32 load_;
   friend struct ::TableStruct_dexhand_5fmsg_2eproto;
 };
+// -------------------------------------------------------------------
+
+class ServoStatusList PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:dexhand.ServoStatusList) */ {
+ public:
+  inline ServoStatusList() : ServoStatusList(nullptr) {};
+  virtual ~ServoStatusList();
+
+  ServoStatusList(const ServoStatusList& from);
+  ServoStatusList(ServoStatusList&& from) noexcept
+    : ServoStatusList() {
+    *this = ::std::move(from);
+  }
+
+  inline ServoStatusList& operator=(const ServoStatusList& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ServoStatusList& operator=(ServoStatusList&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const ServoStatusList& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ServoStatusList* internal_default_instance() {
+    return reinterpret_cast<const ServoStatusList*>(
+               &_ServoStatusList_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(ServoStatusList& a, ServoStatusList& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ServoStatusList* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ServoStatusList* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ServoStatusList* New() const final {
+    return CreateMaybeMessage<ServoStatusList>(nullptr);
+  }
+
+  ServoStatusList* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ServoStatusList>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const ServoStatusList& from);
+  void MergeFrom(const ServoStatusList& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ServoStatusList* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "dexhand.ServoStatusList";
+  }
+  protected:
+  explicit ServoStatusList(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_dexhand_5fmsg_2eproto);
+    return ::descriptor_table_dexhand_5fmsg_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kServosFieldNumber = 1,
+  };
+  // repeated .dexhand.ServoStatus servos = 1;
+  int servos_size() const;
+  private:
+  int _internal_servos_size() const;
+  public:
+  void clear_servos();
+  ::dexhand::ServoStatus* mutable_servos(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::dexhand::ServoStatus >*
+      mutable_servos();
+  private:
+  const ::dexhand::ServoStatus& _internal_servos(int index) const;
+  ::dexhand::ServoStatus* _internal_add_servos();
+  public:
+  const ::dexhand::ServoStatus& servos(int index) const;
+  ::dexhand::ServoStatus* add_servos();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::dexhand::ServoStatus >&
+      servos() const;
+
+  // @@protoc_insertion_point(class_scope:dexhand.ServoStatusList)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::dexhand::ServoStatus > servos_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dexhand_5fmsg_2eproto;
+};
 // ===================================================================
 
 
@@ -510,9 +667,54 @@ inline void ServoStatus::set_load(::PROTOBUF_NAMESPACE_ID::int32 value) {
   // @@protoc_insertion_point(field_set:dexhand.ServoStatus.load)
 }
 
+// -------------------------------------------------------------------
+
+// ServoStatusList
+
+// repeated .dexhand.ServoStatus servos = 1;
+inline int ServoStatusList::_internal_servos_size() const {
+  return servos_.size();
+}
+inline int ServoStatusList::servos_size() const {
+  return _internal_servos_size();
+}
+inline void ServoStatusList::clear_servos() {
+  servos_.Clear();
+}
+inline ::dexhand::ServoStatus* ServoStatusList::mutable_servos(int index) {
+  // @@protoc_insertion_point(field_mutable:dexhand.ServoStatusList.servos)
+  return servos_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::dexhand::ServoStatus >*
+ServoStatusList::mutable_servos() {
+  // @@protoc_insertion_point(field_mutable_list:dexhand.ServoStatusList.servos)
+  return &servos_;
+}
+inline const ::dexhand::ServoStatus& ServoStatusList::_internal_servos(int index) const {
+  return servos_.Get(index);
+}
+inline const ::dexhand::ServoStatus& ServoStatusList::servos(int index) const {
+  // @@protoc_insertion_point(field_get:dexhand.ServoStatusList.servos)
+  return _internal_servos(index);
+}
+inline ::dexhand::ServoStatus* ServoStatusList::_internal_add_servos() {
+  return servos_.Add();
+}
+inline ::dexhand::ServoStatus* ServoStatusList::add_servos() {
+  // @@protoc_insertion_point(field_add:dexhand.ServoStatusList.servos)
+  return _internal_add_servos();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::dexhand::ServoStatus >&
+ServoStatusList::servos() const {
+  // @@protoc_insertion_point(field_list:dexhand.ServoStatusList.servos)
+  return servos_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 

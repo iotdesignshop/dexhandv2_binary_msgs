@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto2',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x11\x64\x65xhand_msg.proto\x12\x07\x64\x65xhand\"\x83\x01\n\x0bServoStatus\x12\x0f\n\x07servoId\x18\x01 \x01(\r\x12\x0e\n\x06status\x18\x02 \x01(\r\x12\x0f\n\x07voltage\x18\x03 \x01(\r\x12\x13\n\x0btemperature\x18\x04 \x01(\r\x12\x10\n\x08position\x18\x05 \x01(\r\x12\r\n\x05speed\x18\x06 \x01(\x11\x12\x0c\n\x04load\x18\x07 \x01(\x11'
+  serialized_pb=b'\n\x11\x64\x65xhand_msg.proto\x12\x07\x64\x65xhand\"\x83\x01\n\x0bServoStatus\x12\x0f\n\x07servoId\x18\x01 \x01(\r\x12\x0e\n\x06status\x18\x02 \x01(\r\x12\x0f\n\x07voltage\x18\x03 \x01(\r\x12\x13\n\x0btemperature\x18\x04 \x01(\r\x12\x10\n\x08position\x18\x05 \x01(\r\x12\r\n\x05speed\x18\x06 \x01(\x11\x12\x0c\n\x04load\x18\x07 \x01(\x11\"7\n\x0fServoStatusList\x12$\n\x06servos\x18\x01 \x03(\x0b\x32\x14.dexhand.ServoStatus'
 )
 
 
@@ -98,7 +98,41 @@ _SERVOSTATUS = _descriptor.Descriptor(
   serialized_end=162,
 )
 
+
+_SERVOSTATUSLIST = _descriptor.Descriptor(
+  name='ServoStatusList',
+  full_name='dexhand.ServoStatusList',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='servos', full_name='dexhand.ServoStatusList.servos', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=164,
+  serialized_end=219,
+)
+
+_SERVOSTATUSLIST.fields_by_name['servos'].message_type = _SERVOSTATUS
 DESCRIPTOR.message_types_by_name['ServoStatus'] = _SERVOSTATUS
+DESCRIPTOR.message_types_by_name['ServoStatusList'] = _SERVOSTATUSLIST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 ServoStatus = _reflection.GeneratedProtocolMessageType('ServoStatus', (_message.Message,), {
@@ -107,6 +141,13 @@ ServoStatus = _reflection.GeneratedProtocolMessageType('ServoStatus', (_message.
   # @@protoc_insertion_point(class_scope:dexhand.ServoStatus)
   })
 _sym_db.RegisterMessage(ServoStatus)
+
+ServoStatusList = _reflection.GeneratedProtocolMessageType('ServoStatusList', (_message.Message,), {
+  'DESCRIPTOR' : _SERVOSTATUSLIST,
+  '__module__' : 'dexhand_msg_pb2'
+  # @@protoc_insertion_point(class_scope:dexhand.ServoStatusList)
+  })
+_sym_db.RegisterMessage(ServoStatusList)
 
 
 # @@protoc_insertion_point(module_scope)
