@@ -9,8 +9,8 @@
 namespace dexhand {
 
 enum DexhandMsgID {
-    SERVO_STATUS_MSG = 0x01,            // For individual servo status
-    SERVO_STATUS_LIST_MSG = 0x02,       // For lists of servo status messages
+    SERVO_FULL_STATUS_MSG = 0x01,            // Full status for an individual servo
+    SERVO_DYNAMICS_LIST_MSG = 0x02,          // High frequency dynamics data for all servos
     NUM_MSGS
 };
 
