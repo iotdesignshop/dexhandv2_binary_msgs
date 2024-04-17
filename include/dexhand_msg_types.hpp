@@ -11,8 +11,9 @@ namespace dexhand {
 enum DexhandMsgID {
     SERVO_FULL_STATUS_MSG = 0x01,            // Full status for an individual servo
     SERVO_DYNAMICS_LIST_MSG = 0x02,          // High frequency dynamics data for all servos
-    SERVO_POSITION_UPDATE_MSG = 0x03,        // Update the position of one or more servos
+    SERVO_POSITION_UPDATE_CMD = 0x03,        // Update the position of one or more servos
     SERVO_VARS_LIST_MSG = 0x04,              // List of variables for all servos
+    SERVO_VARS_UPDATE_CMD = 0x05,            // Update the variables for one or more servos
     NUM_MSGS
 };
 
