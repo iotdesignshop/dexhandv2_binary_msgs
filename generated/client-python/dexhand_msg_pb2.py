@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto2',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x11\x64\x65xhand_msg.proto\x12\x07\x64\x65xhand\"\x83\x01\n\x0bServoStatus\x12\x0f\n\x07servoId\x18\x01 \x01(\r\x12\x0e\n\x06status\x18\x02 \x01(\r\x12\x0f\n\x07voltage\x18\x03 \x01(\r\x12\x13\n\x0btemperature\x18\x04 \x01(\r\x12\x10\n\x08position\x18\x05 \x01(\r\x12\r\n\x05speed\x18\x06 \x01(\x11\x12\x0c\n\x04load\x18\x07 \x01(\x11\"7\n\x0fServoStatusList\x12$\n\x06servos\x18\x01 \x03(\x0b\x32\x14.dexhand.ServoStatus\"\xc7\x01\n\tServoVars\x12\x0f\n\x07servoId\x18\x01 \x01(\r\x12\x0e\n\x06status\x18\x02 \x01(\r\x12\x15\n\rhwMinPosition\x18\x03 \x01(\r\x12\x15\n\rhwMaxPosition\x18\x04 \x01(\r\x12\x15\n\rswMinPosition\x18\x05 \x01(\r\x12\x15\n\rswMaxPosition\x18\x06 \x01(\r\x12\x14\n\x0chomePosition\x18\x07 \x01(\r\x12\x0f\n\x07maxLoad\x18\x08 \x01(\r\x12\x16\n\x0emaxTemperature\x18\t \x01(\r\"3\n\rServoVarsList\x12\"\n\x06servos\x18\x01 \x03(\x0b\x32\x12.dexhand.ServoVars'
+  serialized_pb=b'\n\x11\x64\x65xhand_msg.proto\x12\x07\x64\x65xhand\"\x83\x01\n\x0bServoStatus\x12\x0f\n\x07servoId\x18\x01 \x01(\r\x12\x0e\n\x06status\x18\x02 \x01(\r\x12\x0f\n\x07voltage\x18\x03 \x01(\r\x12\x13\n\x0btemperature\x18\x04 \x01(\r\x12\x10\n\x08position\x18\x05 \x01(\r\x12\r\n\x05speed\x18\x06 \x01(\x11\x12\x0c\n\x04load\x18\x07 \x01(\x11\"7\n\x0fServoStatusList\x12$\n\x06servos\x18\x01 \x03(\x0b\x32\x14.dexhand.ServoStatus\"\xba\x01\n\tServoVars\x12\x0f\n\x07servoId\x18\x01 \x01(\r\x12\x15\n\rhwMinPosition\x18\x02 \x01(\r\x12\x15\n\rhwMaxPosition\x18\x03 \x01(\r\x12\x15\n\rswMinPosition\x18\x04 \x01(\r\x12\x15\n\rswMaxPosition\x18\x05 \x01(\r\x12\x14\n\x0chomePosition\x18\x06 \x01(\r\x12\x12\n\nmaxLoadPct\x18\x07 \x01(\r\x12\x16\n\x0emaxTemperature\x18\x08 \x01(\r\"3\n\rServoVarsList\x12\"\n\x06servos\x18\x01 \x03(\x0b\x32\x12.dexhand.ServoVars'
 )
 
 
@@ -147,57 +147,50 @@ _SERVOVARS = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='status', full_name='dexhand.ServoVars.status', index=1,
+      name='hwMinPosition', full_name='dexhand.ServoVars.hwMinPosition', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='hwMinPosition', full_name='dexhand.ServoVars.hwMinPosition', index=2,
+      name='hwMaxPosition', full_name='dexhand.ServoVars.hwMaxPosition', index=2,
       number=3, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='hwMaxPosition', full_name='dexhand.ServoVars.hwMaxPosition', index=3,
+      name='swMinPosition', full_name='dexhand.ServoVars.swMinPosition', index=3,
       number=4, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='swMinPosition', full_name='dexhand.ServoVars.swMinPosition', index=4,
+      name='swMaxPosition', full_name='dexhand.ServoVars.swMaxPosition', index=4,
       number=5, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='swMaxPosition', full_name='dexhand.ServoVars.swMaxPosition', index=5,
+      name='homePosition', full_name='dexhand.ServoVars.homePosition', index=5,
       number=6, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='homePosition', full_name='dexhand.ServoVars.homePosition', index=6,
+      name='maxLoadPct', full_name='dexhand.ServoVars.maxLoadPct', index=6,
       number=7, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='maxLoad', full_name='dexhand.ServoVars.maxLoad', index=7,
+      name='maxTemperature', full_name='dexhand.ServoVars.maxTemperature', index=7,
       number=8, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='maxTemperature', full_name='dexhand.ServoVars.maxTemperature', index=8,
-      number=9, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -215,7 +208,7 @@ _SERVOVARS = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=222,
-  serialized_end=421,
+  serialized_end=408,
 )
 
 
@@ -246,8 +239,8 @@ _SERVOVARSLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=423,
-  serialized_end=474,
+  serialized_start=410,
+  serialized_end=461,
 )
 
 _SERVOSTATUSLIST.fields_by_name['servos'].message_type = _SERVOSTATUS

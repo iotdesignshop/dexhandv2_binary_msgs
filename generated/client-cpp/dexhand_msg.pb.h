@@ -591,14 +591,13 @@ class ServoVars PROTOBUF_FINAL :
 
   enum : int {
     kServoIdFieldNumber = 1,
-    kStatusFieldNumber = 2,
-    kHwMinPositionFieldNumber = 3,
-    kHwMaxPositionFieldNumber = 4,
-    kSwMinPositionFieldNumber = 5,
-    kSwMaxPositionFieldNumber = 6,
-    kHomePositionFieldNumber = 7,
-    kMaxLoadFieldNumber = 8,
-    kMaxTemperatureFieldNumber = 9,
+    kHwMinPositionFieldNumber = 2,
+    kHwMaxPositionFieldNumber = 3,
+    kSwMinPositionFieldNumber = 4,
+    kSwMaxPositionFieldNumber = 5,
+    kHomePositionFieldNumber = 6,
+    kMaxLoadPctFieldNumber = 7,
+    kMaxTemperatureFieldNumber = 8,
   };
   // optional uint32 servoId = 1;
   bool has_servoid() const;
@@ -613,20 +612,7 @@ class ServoVars PROTOBUF_FINAL :
   void _internal_set_servoid(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // optional uint32 status = 2;
-  bool has_status() const;
-  private:
-  bool _internal_has_status() const;
-  public:
-  void clear_status();
-  ::PROTOBUF_NAMESPACE_ID::uint32 status() const;
-  void set_status(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_status() const;
-  void _internal_set_status(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  public:
-
-  // optional uint32 hwMinPosition = 3;
+  // optional uint32 hwMinPosition = 2;
   bool has_hwminposition() const;
   private:
   bool _internal_has_hwminposition() const;
@@ -639,7 +625,7 @@ class ServoVars PROTOBUF_FINAL :
   void _internal_set_hwminposition(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // optional uint32 hwMaxPosition = 4;
+  // optional uint32 hwMaxPosition = 3;
   bool has_hwmaxposition() const;
   private:
   bool _internal_has_hwmaxposition() const;
@@ -652,7 +638,7 @@ class ServoVars PROTOBUF_FINAL :
   void _internal_set_hwmaxposition(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // optional uint32 swMinPosition = 5;
+  // optional uint32 swMinPosition = 4;
   bool has_swminposition() const;
   private:
   bool _internal_has_swminposition() const;
@@ -665,7 +651,7 @@ class ServoVars PROTOBUF_FINAL :
   void _internal_set_swminposition(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // optional uint32 swMaxPosition = 6;
+  // optional uint32 swMaxPosition = 5;
   bool has_swmaxposition() const;
   private:
   bool _internal_has_swmaxposition() const;
@@ -678,7 +664,7 @@ class ServoVars PROTOBUF_FINAL :
   void _internal_set_swmaxposition(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // optional uint32 homePosition = 7;
+  // optional uint32 homePosition = 6;
   bool has_homeposition() const;
   private:
   bool _internal_has_homeposition() const;
@@ -691,20 +677,20 @@ class ServoVars PROTOBUF_FINAL :
   void _internal_set_homeposition(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // optional uint32 maxLoad = 8;
-  bool has_maxload() const;
+  // optional uint32 maxLoadPct = 7;
+  bool has_maxloadpct() const;
   private:
-  bool _internal_has_maxload() const;
+  bool _internal_has_maxloadpct() const;
   public:
-  void clear_maxload();
-  ::PROTOBUF_NAMESPACE_ID::uint32 maxload() const;
-  void set_maxload(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  void clear_maxloadpct();
+  ::PROTOBUF_NAMESPACE_ID::uint32 maxloadpct() const;
+  void set_maxloadpct(::PROTOBUF_NAMESPACE_ID::uint32 value);
   private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_maxload() const;
-  void _internal_set_maxload(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_maxloadpct() const;
+  void _internal_set_maxloadpct(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
-  // optional uint32 maxTemperature = 9;
+  // optional uint32 maxTemperature = 8;
   bool has_maxtemperature() const;
   private:
   bool _internal_has_maxtemperature() const;
@@ -727,13 +713,12 @@ class ServoVars PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 servoid_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 status_;
   ::PROTOBUF_NAMESPACE_ID::uint32 hwminposition_;
   ::PROTOBUF_NAMESPACE_ID::uint32 hwmaxposition_;
   ::PROTOBUF_NAMESPACE_ID::uint32 swminposition_;
   ::PROTOBUF_NAMESPACE_ID::uint32 swmaxposition_;
   ::PROTOBUF_NAMESPACE_ID::uint32 homeposition_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 maxload_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 maxloadpct_;
   ::PROTOBUF_NAMESPACE_ID::uint32 maxtemperature_;
   friend struct ::TableStruct_dexhand_5fmsg_2eproto;
 };
@@ -1172,37 +1157,9 @@ inline void ServoVars::set_servoid(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   // @@protoc_insertion_point(field_set:dexhand.ServoVars.servoId)
 }
 
-// optional uint32 status = 2;
-inline bool ServoVars::_internal_has_status() const {
-  bool value = (_has_bits_[0] & 0x00000002u) != 0;
-  return value;
-}
-inline bool ServoVars::has_status() const {
-  return _internal_has_status();
-}
-inline void ServoVars::clear_status() {
-  status_ = 0u;
-  _has_bits_[0] &= ~0x00000002u;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoVars::_internal_status() const {
-  return status_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoVars::status() const {
-  // @@protoc_insertion_point(field_get:dexhand.ServoVars.status)
-  return _internal_status();
-}
-inline void ServoVars::_internal_set_status(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _has_bits_[0] |= 0x00000002u;
-  status_ = value;
-}
-inline void ServoVars::set_status(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_status(value);
-  // @@protoc_insertion_point(field_set:dexhand.ServoVars.status)
-}
-
-// optional uint32 hwMinPosition = 3;
+// optional uint32 hwMinPosition = 2;
 inline bool ServoVars::_internal_has_hwminposition() const {
-  bool value = (_has_bits_[0] & 0x00000004u) != 0;
+  bool value = (_has_bits_[0] & 0x00000002u) != 0;
   return value;
 }
 inline bool ServoVars::has_hwminposition() const {
@@ -1210,7 +1167,7 @@ inline bool ServoVars::has_hwminposition() const {
 }
 inline void ServoVars::clear_hwminposition() {
   hwminposition_ = 0u;
-  _has_bits_[0] &= ~0x00000004u;
+  _has_bits_[0] &= ~0x00000002u;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoVars::_internal_hwminposition() const {
   return hwminposition_;
@@ -1220,7 +1177,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoVars::hwminposition() const {
   return _internal_hwminposition();
 }
 inline void ServoVars::_internal_set_hwminposition(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _has_bits_[0] |= 0x00000004u;
+  _has_bits_[0] |= 0x00000002u;
   hwminposition_ = value;
 }
 inline void ServoVars::set_hwminposition(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -1228,9 +1185,9 @@ inline void ServoVars::set_hwminposition(::PROTOBUF_NAMESPACE_ID::uint32 value) 
   // @@protoc_insertion_point(field_set:dexhand.ServoVars.hwMinPosition)
 }
 
-// optional uint32 hwMaxPosition = 4;
+// optional uint32 hwMaxPosition = 3;
 inline bool ServoVars::_internal_has_hwmaxposition() const {
-  bool value = (_has_bits_[0] & 0x00000008u) != 0;
+  bool value = (_has_bits_[0] & 0x00000004u) != 0;
   return value;
 }
 inline bool ServoVars::has_hwmaxposition() const {
@@ -1238,7 +1195,7 @@ inline bool ServoVars::has_hwmaxposition() const {
 }
 inline void ServoVars::clear_hwmaxposition() {
   hwmaxposition_ = 0u;
-  _has_bits_[0] &= ~0x00000008u;
+  _has_bits_[0] &= ~0x00000004u;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoVars::_internal_hwmaxposition() const {
   return hwmaxposition_;
@@ -1248,7 +1205,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoVars::hwmaxposition() const {
   return _internal_hwmaxposition();
 }
 inline void ServoVars::_internal_set_hwmaxposition(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _has_bits_[0] |= 0x00000008u;
+  _has_bits_[0] |= 0x00000004u;
   hwmaxposition_ = value;
 }
 inline void ServoVars::set_hwmaxposition(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -1256,9 +1213,9 @@ inline void ServoVars::set_hwmaxposition(::PROTOBUF_NAMESPACE_ID::uint32 value) 
   // @@protoc_insertion_point(field_set:dexhand.ServoVars.hwMaxPosition)
 }
 
-// optional uint32 swMinPosition = 5;
+// optional uint32 swMinPosition = 4;
 inline bool ServoVars::_internal_has_swminposition() const {
-  bool value = (_has_bits_[0] & 0x00000010u) != 0;
+  bool value = (_has_bits_[0] & 0x00000008u) != 0;
   return value;
 }
 inline bool ServoVars::has_swminposition() const {
@@ -1266,7 +1223,7 @@ inline bool ServoVars::has_swminposition() const {
 }
 inline void ServoVars::clear_swminposition() {
   swminposition_ = 0u;
-  _has_bits_[0] &= ~0x00000010u;
+  _has_bits_[0] &= ~0x00000008u;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoVars::_internal_swminposition() const {
   return swminposition_;
@@ -1276,7 +1233,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoVars::swminposition() const {
   return _internal_swminposition();
 }
 inline void ServoVars::_internal_set_swminposition(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _has_bits_[0] |= 0x00000010u;
+  _has_bits_[0] |= 0x00000008u;
   swminposition_ = value;
 }
 inline void ServoVars::set_swminposition(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -1284,9 +1241,9 @@ inline void ServoVars::set_swminposition(::PROTOBUF_NAMESPACE_ID::uint32 value) 
   // @@protoc_insertion_point(field_set:dexhand.ServoVars.swMinPosition)
 }
 
-// optional uint32 swMaxPosition = 6;
+// optional uint32 swMaxPosition = 5;
 inline bool ServoVars::_internal_has_swmaxposition() const {
-  bool value = (_has_bits_[0] & 0x00000020u) != 0;
+  bool value = (_has_bits_[0] & 0x00000010u) != 0;
   return value;
 }
 inline bool ServoVars::has_swmaxposition() const {
@@ -1294,7 +1251,7 @@ inline bool ServoVars::has_swmaxposition() const {
 }
 inline void ServoVars::clear_swmaxposition() {
   swmaxposition_ = 0u;
-  _has_bits_[0] &= ~0x00000020u;
+  _has_bits_[0] &= ~0x00000010u;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoVars::_internal_swmaxposition() const {
   return swmaxposition_;
@@ -1304,7 +1261,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoVars::swmaxposition() const {
   return _internal_swmaxposition();
 }
 inline void ServoVars::_internal_set_swmaxposition(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _has_bits_[0] |= 0x00000020u;
+  _has_bits_[0] |= 0x00000010u;
   swmaxposition_ = value;
 }
 inline void ServoVars::set_swmaxposition(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -1312,9 +1269,9 @@ inline void ServoVars::set_swmaxposition(::PROTOBUF_NAMESPACE_ID::uint32 value) 
   // @@protoc_insertion_point(field_set:dexhand.ServoVars.swMaxPosition)
 }
 
-// optional uint32 homePosition = 7;
+// optional uint32 homePosition = 6;
 inline bool ServoVars::_internal_has_homeposition() const {
-  bool value = (_has_bits_[0] & 0x00000040u) != 0;
+  bool value = (_has_bits_[0] & 0x00000020u) != 0;
   return value;
 }
 inline bool ServoVars::has_homeposition() const {
@@ -1322,7 +1279,7 @@ inline bool ServoVars::has_homeposition() const {
 }
 inline void ServoVars::clear_homeposition() {
   homeposition_ = 0u;
-  _has_bits_[0] &= ~0x00000040u;
+  _has_bits_[0] &= ~0x00000020u;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoVars::_internal_homeposition() const {
   return homeposition_;
@@ -1332,7 +1289,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoVars::homeposition() const {
   return _internal_homeposition();
 }
 inline void ServoVars::_internal_set_homeposition(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _has_bits_[0] |= 0x00000040u;
+  _has_bits_[0] |= 0x00000020u;
   homeposition_ = value;
 }
 inline void ServoVars::set_homeposition(::PROTOBUF_NAMESPACE_ID::uint32 value) {
@@ -1340,37 +1297,37 @@ inline void ServoVars::set_homeposition(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   // @@protoc_insertion_point(field_set:dexhand.ServoVars.homePosition)
 }
 
-// optional uint32 maxLoad = 8;
-inline bool ServoVars::_internal_has_maxload() const {
-  bool value = (_has_bits_[0] & 0x00000080u) != 0;
+// optional uint32 maxLoadPct = 7;
+inline bool ServoVars::_internal_has_maxloadpct() const {
+  bool value = (_has_bits_[0] & 0x00000040u) != 0;
   return value;
 }
-inline bool ServoVars::has_maxload() const {
-  return _internal_has_maxload();
+inline bool ServoVars::has_maxloadpct() const {
+  return _internal_has_maxloadpct();
 }
-inline void ServoVars::clear_maxload() {
-  maxload_ = 0u;
-  _has_bits_[0] &= ~0x00000080u;
+inline void ServoVars::clear_maxloadpct() {
+  maxloadpct_ = 0u;
+  _has_bits_[0] &= ~0x00000040u;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoVars::_internal_maxload() const {
-  return maxload_;
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoVars::_internal_maxloadpct() const {
+  return maxloadpct_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoVars::maxload() const {
-  // @@protoc_insertion_point(field_get:dexhand.ServoVars.maxLoad)
-  return _internal_maxload();
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoVars::maxloadpct() const {
+  // @@protoc_insertion_point(field_get:dexhand.ServoVars.maxLoadPct)
+  return _internal_maxloadpct();
 }
-inline void ServoVars::_internal_set_maxload(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _has_bits_[0] |= 0x00000080u;
-  maxload_ = value;
+inline void ServoVars::_internal_set_maxloadpct(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _has_bits_[0] |= 0x00000040u;
+  maxloadpct_ = value;
 }
-inline void ServoVars::set_maxload(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _internal_set_maxload(value);
-  // @@protoc_insertion_point(field_set:dexhand.ServoVars.maxLoad)
+inline void ServoVars::set_maxloadpct(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_maxloadpct(value);
+  // @@protoc_insertion_point(field_set:dexhand.ServoVars.maxLoadPct)
 }
 
-// optional uint32 maxTemperature = 9;
+// optional uint32 maxTemperature = 8;
 inline bool ServoVars::_internal_has_maxtemperature() const {
-  bool value = (_has_bits_[0] & 0x00000100u) != 0;
+  bool value = (_has_bits_[0] & 0x00000080u) != 0;
   return value;
 }
 inline bool ServoVars::has_maxtemperature() const {
@@ -1378,7 +1335,7 @@ inline bool ServoVars::has_maxtemperature() const {
 }
 inline void ServoVars::clear_maxtemperature() {
   maxtemperature_ = 0u;
-  _has_bits_[0] &= ~0x00000100u;
+  _has_bits_[0] &= ~0x00000080u;
 }
 inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoVars::_internal_maxtemperature() const {
   return maxtemperature_;
@@ -1388,7 +1345,7 @@ inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoVars::maxtemperature() const {
   return _internal_maxtemperature();
 }
 inline void ServoVars::_internal_set_maxtemperature(::PROTOBUF_NAMESPACE_ID::uint32 value) {
-  _has_bits_[0] |= 0x00000100u;
+  _has_bits_[0] |= 0x00000080u;
   maxtemperature_ = value;
 }
 inline void ServoVars::set_maxtemperature(::PROTOBUF_NAMESPACE_ID::uint32 value) {

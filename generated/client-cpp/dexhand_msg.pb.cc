@@ -128,13 +128,12 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_dexhand_5fmsg_2eproto::offsets
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::dexhand::ServoVars, servoid_),
-  PROTOBUF_FIELD_OFFSET(::dexhand::ServoVars, status_),
   PROTOBUF_FIELD_OFFSET(::dexhand::ServoVars, hwminposition_),
   PROTOBUF_FIELD_OFFSET(::dexhand::ServoVars, hwmaxposition_),
   PROTOBUF_FIELD_OFFSET(::dexhand::ServoVars, swminposition_),
   PROTOBUF_FIELD_OFFSET(::dexhand::ServoVars, swmaxposition_),
   PROTOBUF_FIELD_OFFSET(::dexhand::ServoVars, homeposition_),
-  PROTOBUF_FIELD_OFFSET(::dexhand::ServoVars, maxload_),
+  PROTOBUF_FIELD_OFFSET(::dexhand::ServoVars, maxloadpct_),
   PROTOBUF_FIELD_OFFSET(::dexhand::ServoVars, maxtemperature_),
   0,
   1,
@@ -144,7 +143,6 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_dexhand_5fmsg_2eproto::offsets
   5,
   6,
   7,
-  8,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::dexhand::ServoVarsList, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -155,8 +153,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_dexhand_5fmsg_2eproto::offsets
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, 12, sizeof(::dexhand::ServoStatus)},
   { 19, -1, sizeof(::dexhand::ServoStatusList)},
-  { 25, 39, sizeof(::dexhand::ServoVars)},
-  { 48, -1, sizeof(::dexhand::ServoVarsList)},
+  { 25, 38, sizeof(::dexhand::ServoVars)},
+  { 46, -1, sizeof(::dexhand::ServoVarsList)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -172,13 +170,13 @@ const char descriptor_table_protodef_dexhand_5fmsg_2eproto[] PROTOBUF_SECTION_VA
   "\007voltage\030\003 \001(\r\022\023\n\013temperature\030\004 \001(\r\022\020\n\010p"
   "osition\030\005 \001(\r\022\r\n\005speed\030\006 \001(\021\022\014\n\004load\030\007 \001"
   "(\021\"7\n\017ServoStatusList\022$\n\006servos\030\001 \003(\0132\024."
-  "dexhand.ServoStatus\"\307\001\n\tServoVars\022\017\n\007ser"
-  "voId\030\001 \001(\r\022\016\n\006status\030\002 \001(\r\022\025\n\rhwMinPosit"
-  "ion\030\003 \001(\r\022\025\n\rhwMaxPosition\030\004 \001(\r\022\025\n\rswMi"
-  "nPosition\030\005 \001(\r\022\025\n\rswMaxPosition\030\006 \001(\r\022\024"
-  "\n\014homePosition\030\007 \001(\r\022\017\n\007maxLoad\030\010 \001(\r\022\026\n"
-  "\016maxTemperature\030\t \001(\r\"3\n\rServoVarsList\022\""
-  "\n\006servos\030\001 \003(\0132\022.dexhand.ServoVars"
+  "dexhand.ServoStatus\"\272\001\n\tServoVars\022\017\n\007ser"
+  "voId\030\001 \001(\r\022\025\n\rhwMinPosition\030\002 \001(\r\022\025\n\rhwM"
+  "axPosition\030\003 \001(\r\022\025\n\rswMinPosition\030\004 \001(\r\022"
+  "\025\n\rswMaxPosition\030\005 \001(\r\022\024\n\014homePosition\030\006"
+  " \001(\r\022\022\n\nmaxLoadPct\030\007 \001(\r\022\026\n\016maxTemperatu"
+  "re\030\010 \001(\r\"3\n\rServoVarsList\022\"\n\006servos\030\001 \003("
+  "\0132\022.dexhand.ServoVars"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_dexhand_5fmsg_2eproto_deps[1] = {
 };
@@ -190,7 +188,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_dex
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_dexhand_5fmsg_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_dexhand_5fmsg_2eproto = {
-  false, false, descriptor_table_protodef_dexhand_5fmsg_2eproto, "dexhand_msg.proto", 474,
+  false, false, descriptor_table_protodef_dexhand_5fmsg_2eproto, "dexhand_msg.proto", 461,
   &descriptor_table_dexhand_5fmsg_2eproto_once, descriptor_table_dexhand_5fmsg_2eproto_sccs, descriptor_table_dexhand_5fmsg_2eproto_deps, 4, 0,
   schemas, file_default_instances, TableStruct_dexhand_5fmsg_2eproto::offsets,
   file_level_metadata_dexhand_5fmsg_2eproto, 4, file_level_enum_descriptors_dexhand_5fmsg_2eproto, file_level_service_descriptors_dexhand_5fmsg_2eproto,
@@ -804,29 +802,26 @@ class ServoVars::_Internal {
   static void set_has_servoid(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
-  static void set_has_status(HasBits* has_bits) {
+  static void set_has_hwminposition(HasBits* has_bits) {
     (*has_bits)[0] |= 2u;
   }
-  static void set_has_hwminposition(HasBits* has_bits) {
+  static void set_has_hwmaxposition(HasBits* has_bits) {
     (*has_bits)[0] |= 4u;
   }
-  static void set_has_hwmaxposition(HasBits* has_bits) {
+  static void set_has_swminposition(HasBits* has_bits) {
     (*has_bits)[0] |= 8u;
   }
-  static void set_has_swminposition(HasBits* has_bits) {
+  static void set_has_swmaxposition(HasBits* has_bits) {
     (*has_bits)[0] |= 16u;
   }
-  static void set_has_swmaxposition(HasBits* has_bits) {
+  static void set_has_homeposition(HasBits* has_bits) {
     (*has_bits)[0] |= 32u;
   }
-  static void set_has_homeposition(HasBits* has_bits) {
+  static void set_has_maxloadpct(HasBits* has_bits) {
     (*has_bits)[0] |= 64u;
   }
-  static void set_has_maxload(HasBits* has_bits) {
-    (*has_bits)[0] |= 128u;
-  }
   static void set_has_maxtemperature(HasBits* has_bits) {
-    (*has_bits)[0] |= 256u;
+    (*has_bits)[0] |= 128u;
   }
 };
 
@@ -886,10 +881,9 @@ void ServoVars::Clear() {
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x000000ffu) {
     ::memset(&servoid_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&maxload_) -
-        reinterpret_cast<char*>(&servoid_)) + sizeof(maxload_));
+        reinterpret_cast<char*>(&maxtemperature_) -
+        reinterpret_cast<char*>(&servoid_)) + sizeof(maxtemperature_));
   }
-  maxtemperature_ = 0u;
   _has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -911,65 +905,57 @@ const char* ServoVars::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // optional uint32 status = 2;
+      // optional uint32 hwMinPosition = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          _Internal::set_has_status(&has_bits);
-          status_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // optional uint32 hwMinPosition = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
           _Internal::set_has_hwminposition(&has_bits);
           hwminposition_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // optional uint32 hwMaxPosition = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+      // optional uint32 hwMaxPosition = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
           _Internal::set_has_hwmaxposition(&has_bits);
           hwmaxposition_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // optional uint32 swMinPosition = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
+      // optional uint32 swMinPosition = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
           _Internal::set_has_swminposition(&has_bits);
           swminposition_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // optional uint32 swMaxPosition = 6;
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
+      // optional uint32 swMaxPosition = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
           _Internal::set_has_swmaxposition(&has_bits);
           swmaxposition_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // optional uint32 homePosition = 7;
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
+      // optional uint32 homePosition = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
           _Internal::set_has_homeposition(&has_bits);
           homeposition_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // optional uint32 maxLoad = 8;
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
-          _Internal::set_has_maxload(&has_bits);
-          maxload_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+      // optional uint32 maxLoadPct = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
+          _Internal::set_has_maxloadpct(&has_bits);
+          maxloadpct_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // optional uint32 maxTemperature = 9;
-      case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 72)) {
+      // optional uint32 maxTemperature = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
           _Internal::set_has_maxtemperature(&has_bits);
           maxtemperature_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
@@ -1011,52 +997,46 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_servoid(), target);
   }
 
-  // optional uint32 status = 2;
+  // optional uint32 hwMinPosition = 2;
   if (cached_has_bits & 0x00000002u) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_status(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_hwminposition(), target);
   }
 
-  // optional uint32 hwMinPosition = 3;
+  // optional uint32 hwMaxPosition = 3;
   if (cached_has_bits & 0x00000004u) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_hwminposition(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->_internal_hwmaxposition(), target);
   }
 
-  // optional uint32 hwMaxPosition = 4;
+  // optional uint32 swMinPosition = 4;
   if (cached_has_bits & 0x00000008u) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(4, this->_internal_hwmaxposition(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(4, this->_internal_swminposition(), target);
   }
 
-  // optional uint32 swMinPosition = 5;
+  // optional uint32 swMaxPosition = 5;
   if (cached_has_bits & 0x00000010u) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(5, this->_internal_swminposition(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(5, this->_internal_swmaxposition(), target);
   }
 
-  // optional uint32 swMaxPosition = 6;
+  // optional uint32 homePosition = 6;
   if (cached_has_bits & 0x00000020u) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(6, this->_internal_swmaxposition(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(6, this->_internal_homeposition(), target);
   }
 
-  // optional uint32 homePosition = 7;
+  // optional uint32 maxLoadPct = 7;
   if (cached_has_bits & 0x00000040u) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(7, this->_internal_homeposition(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(7, this->_internal_maxloadpct(), target);
   }
 
-  // optional uint32 maxLoad = 8;
+  // optional uint32 maxTemperature = 8;
   if (cached_has_bits & 0x00000080u) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(8, this->_internal_maxload(), target);
-  }
-
-  // optional uint32 maxTemperature = 9;
-  if (cached_has_bits & 0x00000100u) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(9, this->_internal_maxtemperature(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(8, this->_internal_maxtemperature(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1084,63 +1064,56 @@ size_t ServoVars::ByteSizeLong() const {
           this->_internal_servoid());
     }
 
-    // optional uint32 status = 2;
+    // optional uint32 hwMinPosition = 2;
     if (cached_has_bits & 0x00000002u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-          this->_internal_status());
-    }
-
-    // optional uint32 hwMinPosition = 3;
-    if (cached_has_bits & 0x00000004u) {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
           this->_internal_hwminposition());
     }
 
-    // optional uint32 hwMaxPosition = 4;
-    if (cached_has_bits & 0x00000008u) {
+    // optional uint32 hwMaxPosition = 3;
+    if (cached_has_bits & 0x00000004u) {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
           this->_internal_hwmaxposition());
     }
 
-    // optional uint32 swMinPosition = 5;
-    if (cached_has_bits & 0x00000010u) {
+    // optional uint32 swMinPosition = 4;
+    if (cached_has_bits & 0x00000008u) {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
           this->_internal_swminposition());
     }
 
-    // optional uint32 swMaxPosition = 6;
-    if (cached_has_bits & 0x00000020u) {
+    // optional uint32 swMaxPosition = 5;
+    if (cached_has_bits & 0x00000010u) {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
           this->_internal_swmaxposition());
     }
 
-    // optional uint32 homePosition = 7;
-    if (cached_has_bits & 0x00000040u) {
+    // optional uint32 homePosition = 6;
+    if (cached_has_bits & 0x00000020u) {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
           this->_internal_homeposition());
     }
 
-    // optional uint32 maxLoad = 8;
+    // optional uint32 maxLoadPct = 7;
+    if (cached_has_bits & 0x00000040u) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+          this->_internal_maxloadpct());
+    }
+
+    // optional uint32 maxTemperature = 8;
     if (cached_has_bits & 0x00000080u) {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-          this->_internal_maxload());
+          this->_internal_maxtemperature());
     }
 
   }
-  // optional uint32 maxTemperature = 9;
-  if (cached_has_bits & 0x00000100u) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_maxtemperature());
-  }
-
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -1178,30 +1151,27 @@ void ServoVars::MergeFrom(const ServoVars& from) {
       servoid_ = from.servoid_;
     }
     if (cached_has_bits & 0x00000002u) {
-      status_ = from.status_;
-    }
-    if (cached_has_bits & 0x00000004u) {
       hwminposition_ = from.hwminposition_;
     }
-    if (cached_has_bits & 0x00000008u) {
+    if (cached_has_bits & 0x00000004u) {
       hwmaxposition_ = from.hwmaxposition_;
     }
-    if (cached_has_bits & 0x00000010u) {
+    if (cached_has_bits & 0x00000008u) {
       swminposition_ = from.swminposition_;
     }
-    if (cached_has_bits & 0x00000020u) {
+    if (cached_has_bits & 0x00000010u) {
       swmaxposition_ = from.swmaxposition_;
     }
-    if (cached_has_bits & 0x00000040u) {
+    if (cached_has_bits & 0x00000020u) {
       homeposition_ = from.homeposition_;
     }
+    if (cached_has_bits & 0x00000040u) {
+      maxloadpct_ = from.maxloadpct_;
+    }
     if (cached_has_bits & 0x00000080u) {
-      maxload_ = from.maxload_;
+      maxtemperature_ = from.maxtemperature_;
     }
     _has_bits_[0] |= cached_has_bits;
-  }
-  if (cached_has_bits & 0x00000100u) {
-    _internal_set_maxtemperature(from._internal_maxtemperature());
   }
 }
 
