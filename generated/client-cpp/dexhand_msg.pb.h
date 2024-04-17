@@ -47,7 +47,7 @@ struct TableStruct_dexhand_5fmsg_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[2]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[4]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -61,10 +61,18 @@ extern ServoStatusDefaultTypeInternal _ServoStatus_default_instance_;
 class ServoStatusList;
 class ServoStatusListDefaultTypeInternal;
 extern ServoStatusListDefaultTypeInternal _ServoStatusList_default_instance_;
+class ServoVars;
+class ServoVarsDefaultTypeInternal;
+extern ServoVarsDefaultTypeInternal _ServoVars_default_instance_;
+class ServoVarsList;
+class ServoVarsListDefaultTypeInternal;
+extern ServoVarsListDefaultTypeInternal _ServoVarsList_default_instance_;
 }  // namespace dexhand
 PROTOBUF_NAMESPACE_OPEN
 template<> ::dexhand::ServoStatus* Arena::CreateMaybeMessage<::dexhand::ServoStatus>(Arena*);
 template<> ::dexhand::ServoStatusList* Arena::CreateMaybeMessage<::dexhand::ServoStatusList>(Arena*);
+template<> ::dexhand::ServoVars* Arena::CreateMaybeMessage<::dexhand::ServoVars>(Arena*);
+template<> ::dexhand::ServoVarsList* Arena::CreateMaybeMessage<::dexhand::ServoVarsList>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace dexhand {
 
@@ -460,6 +468,428 @@ class ServoStatusList PROTOBUF_FINAL :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_dexhand_5fmsg_2eproto;
 };
+// -------------------------------------------------------------------
+
+class ServoVars PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:dexhand.ServoVars) */ {
+ public:
+  inline ServoVars() : ServoVars(nullptr) {};
+  virtual ~ServoVars();
+
+  ServoVars(const ServoVars& from);
+  ServoVars(ServoVars&& from) noexcept
+    : ServoVars() {
+    *this = ::std::move(from);
+  }
+
+  inline ServoVars& operator=(const ServoVars& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ServoVars& operator=(ServoVars&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const ServoVars& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ServoVars* internal_default_instance() {
+    return reinterpret_cast<const ServoVars*>(
+               &_ServoVars_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(ServoVars& a, ServoVars& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ServoVars* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ServoVars* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ServoVars* New() const final {
+    return CreateMaybeMessage<ServoVars>(nullptr);
+  }
+
+  ServoVars* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ServoVars>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const ServoVars& from);
+  void MergeFrom(const ServoVars& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ServoVars* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "dexhand.ServoVars";
+  }
+  protected:
+  explicit ServoVars(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_dexhand_5fmsg_2eproto);
+    return ::descriptor_table_dexhand_5fmsg_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kServoIdFieldNumber = 1,
+    kStatusFieldNumber = 2,
+    kHwMinPositionFieldNumber = 3,
+    kHwMaxPositionFieldNumber = 4,
+    kSwMinPositionFieldNumber = 5,
+    kSwMaxPositionFieldNumber = 6,
+    kHomePositionFieldNumber = 7,
+    kMaxLoadFieldNumber = 8,
+    kMaxTemperatureFieldNumber = 9,
+  };
+  // optional uint32 servoId = 1;
+  bool has_servoid() const;
+  private:
+  bool _internal_has_servoid() const;
+  public:
+  void clear_servoid();
+  ::PROTOBUF_NAMESPACE_ID::uint32 servoid() const;
+  void set_servoid(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_servoid() const;
+  void _internal_set_servoid(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // optional uint32 status = 2;
+  bool has_status() const;
+  private:
+  bool _internal_has_status() const;
+  public:
+  void clear_status();
+  ::PROTOBUF_NAMESPACE_ID::uint32 status() const;
+  void set_status(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_status() const;
+  void _internal_set_status(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // optional uint32 hwMinPosition = 3;
+  bool has_hwminposition() const;
+  private:
+  bool _internal_has_hwminposition() const;
+  public:
+  void clear_hwminposition();
+  ::PROTOBUF_NAMESPACE_ID::uint32 hwminposition() const;
+  void set_hwminposition(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_hwminposition() const;
+  void _internal_set_hwminposition(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // optional uint32 hwMaxPosition = 4;
+  bool has_hwmaxposition() const;
+  private:
+  bool _internal_has_hwmaxposition() const;
+  public:
+  void clear_hwmaxposition();
+  ::PROTOBUF_NAMESPACE_ID::uint32 hwmaxposition() const;
+  void set_hwmaxposition(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_hwmaxposition() const;
+  void _internal_set_hwmaxposition(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // optional uint32 swMinPosition = 5;
+  bool has_swminposition() const;
+  private:
+  bool _internal_has_swminposition() const;
+  public:
+  void clear_swminposition();
+  ::PROTOBUF_NAMESPACE_ID::uint32 swminposition() const;
+  void set_swminposition(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_swminposition() const;
+  void _internal_set_swminposition(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // optional uint32 swMaxPosition = 6;
+  bool has_swmaxposition() const;
+  private:
+  bool _internal_has_swmaxposition() const;
+  public:
+  void clear_swmaxposition();
+  ::PROTOBUF_NAMESPACE_ID::uint32 swmaxposition() const;
+  void set_swmaxposition(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_swmaxposition() const;
+  void _internal_set_swmaxposition(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // optional uint32 homePosition = 7;
+  bool has_homeposition() const;
+  private:
+  bool _internal_has_homeposition() const;
+  public:
+  void clear_homeposition();
+  ::PROTOBUF_NAMESPACE_ID::uint32 homeposition() const;
+  void set_homeposition(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_homeposition() const;
+  void _internal_set_homeposition(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // optional uint32 maxLoad = 8;
+  bool has_maxload() const;
+  private:
+  bool _internal_has_maxload() const;
+  public:
+  void clear_maxload();
+  ::PROTOBUF_NAMESPACE_ID::uint32 maxload() const;
+  void set_maxload(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_maxload() const;
+  void _internal_set_maxload(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // optional uint32 maxTemperature = 9;
+  bool has_maxtemperature() const;
+  private:
+  bool _internal_has_maxtemperature() const;
+  public:
+  void clear_maxtemperature();
+  ::PROTOBUF_NAMESPACE_ID::uint32 maxtemperature() const;
+  void set_maxtemperature(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_maxtemperature() const;
+  void _internal_set_maxtemperature(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:dexhand.ServoVars)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 servoid_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 status_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 hwminposition_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 hwmaxposition_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 swminposition_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 swmaxposition_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 homeposition_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 maxload_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 maxtemperature_;
+  friend struct ::TableStruct_dexhand_5fmsg_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ServoVarsList PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:dexhand.ServoVarsList) */ {
+ public:
+  inline ServoVarsList() : ServoVarsList(nullptr) {};
+  virtual ~ServoVarsList();
+
+  ServoVarsList(const ServoVarsList& from);
+  ServoVarsList(ServoVarsList&& from) noexcept
+    : ServoVarsList() {
+    *this = ::std::move(from);
+  }
+
+  inline ServoVarsList& operator=(const ServoVarsList& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ServoVarsList& operator=(ServoVarsList&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const ServoVarsList& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ServoVarsList* internal_default_instance() {
+    return reinterpret_cast<const ServoVarsList*>(
+               &_ServoVarsList_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    3;
+
+  friend void swap(ServoVarsList& a, ServoVarsList& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ServoVarsList* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ServoVarsList* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ServoVarsList* New() const final {
+    return CreateMaybeMessage<ServoVarsList>(nullptr);
+  }
+
+  ServoVarsList* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ServoVarsList>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const ServoVarsList& from);
+  void MergeFrom(const ServoVarsList& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ServoVarsList* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "dexhand.ServoVarsList";
+  }
+  protected:
+  explicit ServoVarsList(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_dexhand_5fmsg_2eproto);
+    return ::descriptor_table_dexhand_5fmsg_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kServosFieldNumber = 1,
+  };
+  // repeated .dexhand.ServoVars servos = 1;
+  int servos_size() const;
+  private:
+  int _internal_servos_size() const;
+  public:
+  void clear_servos();
+  ::dexhand::ServoVars* mutable_servos(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::dexhand::ServoVars >*
+      mutable_servos();
+  private:
+  const ::dexhand::ServoVars& _internal_servos(int index) const;
+  ::dexhand::ServoVars* _internal_add_servos();
+  public:
+  const ::dexhand::ServoVars& servos(int index) const;
+  ::dexhand::ServoVars* add_servos();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::dexhand::ServoVars >&
+      servos() const;
+
+  // @@protoc_insertion_point(class_scope:dexhand.ServoVarsList)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::dexhand::ServoVars > servos_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dexhand_5fmsg_2eproto;
+};
 // ===================================================================
 
 
@@ -710,9 +1140,312 @@ ServoStatusList::servos() const {
   return servos_;
 }
 
+// -------------------------------------------------------------------
+
+// ServoVars
+
+// optional uint32 servoId = 1;
+inline bool ServoVars::_internal_has_servoid() const {
+  bool value = (_has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool ServoVars::has_servoid() const {
+  return _internal_has_servoid();
+}
+inline void ServoVars::clear_servoid() {
+  servoid_ = 0u;
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoVars::_internal_servoid() const {
+  return servoid_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoVars::servoid() const {
+  // @@protoc_insertion_point(field_get:dexhand.ServoVars.servoId)
+  return _internal_servoid();
+}
+inline void ServoVars::_internal_set_servoid(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _has_bits_[0] |= 0x00000001u;
+  servoid_ = value;
+}
+inline void ServoVars::set_servoid(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_servoid(value);
+  // @@protoc_insertion_point(field_set:dexhand.ServoVars.servoId)
+}
+
+// optional uint32 status = 2;
+inline bool ServoVars::_internal_has_status() const {
+  bool value = (_has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool ServoVars::has_status() const {
+  return _internal_has_status();
+}
+inline void ServoVars::clear_status() {
+  status_ = 0u;
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoVars::_internal_status() const {
+  return status_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoVars::status() const {
+  // @@protoc_insertion_point(field_get:dexhand.ServoVars.status)
+  return _internal_status();
+}
+inline void ServoVars::_internal_set_status(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _has_bits_[0] |= 0x00000002u;
+  status_ = value;
+}
+inline void ServoVars::set_status(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_status(value);
+  // @@protoc_insertion_point(field_set:dexhand.ServoVars.status)
+}
+
+// optional uint32 hwMinPosition = 3;
+inline bool ServoVars::_internal_has_hwminposition() const {
+  bool value = (_has_bits_[0] & 0x00000004u) != 0;
+  return value;
+}
+inline bool ServoVars::has_hwminposition() const {
+  return _internal_has_hwminposition();
+}
+inline void ServoVars::clear_hwminposition() {
+  hwminposition_ = 0u;
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoVars::_internal_hwminposition() const {
+  return hwminposition_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoVars::hwminposition() const {
+  // @@protoc_insertion_point(field_get:dexhand.ServoVars.hwMinPosition)
+  return _internal_hwminposition();
+}
+inline void ServoVars::_internal_set_hwminposition(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _has_bits_[0] |= 0x00000004u;
+  hwminposition_ = value;
+}
+inline void ServoVars::set_hwminposition(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_hwminposition(value);
+  // @@protoc_insertion_point(field_set:dexhand.ServoVars.hwMinPosition)
+}
+
+// optional uint32 hwMaxPosition = 4;
+inline bool ServoVars::_internal_has_hwmaxposition() const {
+  bool value = (_has_bits_[0] & 0x00000008u) != 0;
+  return value;
+}
+inline bool ServoVars::has_hwmaxposition() const {
+  return _internal_has_hwmaxposition();
+}
+inline void ServoVars::clear_hwmaxposition() {
+  hwmaxposition_ = 0u;
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoVars::_internal_hwmaxposition() const {
+  return hwmaxposition_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoVars::hwmaxposition() const {
+  // @@protoc_insertion_point(field_get:dexhand.ServoVars.hwMaxPosition)
+  return _internal_hwmaxposition();
+}
+inline void ServoVars::_internal_set_hwmaxposition(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _has_bits_[0] |= 0x00000008u;
+  hwmaxposition_ = value;
+}
+inline void ServoVars::set_hwmaxposition(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_hwmaxposition(value);
+  // @@protoc_insertion_point(field_set:dexhand.ServoVars.hwMaxPosition)
+}
+
+// optional uint32 swMinPosition = 5;
+inline bool ServoVars::_internal_has_swminposition() const {
+  bool value = (_has_bits_[0] & 0x00000010u) != 0;
+  return value;
+}
+inline bool ServoVars::has_swminposition() const {
+  return _internal_has_swminposition();
+}
+inline void ServoVars::clear_swminposition() {
+  swminposition_ = 0u;
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoVars::_internal_swminposition() const {
+  return swminposition_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoVars::swminposition() const {
+  // @@protoc_insertion_point(field_get:dexhand.ServoVars.swMinPosition)
+  return _internal_swminposition();
+}
+inline void ServoVars::_internal_set_swminposition(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _has_bits_[0] |= 0x00000010u;
+  swminposition_ = value;
+}
+inline void ServoVars::set_swminposition(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_swminposition(value);
+  // @@protoc_insertion_point(field_set:dexhand.ServoVars.swMinPosition)
+}
+
+// optional uint32 swMaxPosition = 6;
+inline bool ServoVars::_internal_has_swmaxposition() const {
+  bool value = (_has_bits_[0] & 0x00000020u) != 0;
+  return value;
+}
+inline bool ServoVars::has_swmaxposition() const {
+  return _internal_has_swmaxposition();
+}
+inline void ServoVars::clear_swmaxposition() {
+  swmaxposition_ = 0u;
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoVars::_internal_swmaxposition() const {
+  return swmaxposition_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoVars::swmaxposition() const {
+  // @@protoc_insertion_point(field_get:dexhand.ServoVars.swMaxPosition)
+  return _internal_swmaxposition();
+}
+inline void ServoVars::_internal_set_swmaxposition(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _has_bits_[0] |= 0x00000020u;
+  swmaxposition_ = value;
+}
+inline void ServoVars::set_swmaxposition(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_swmaxposition(value);
+  // @@protoc_insertion_point(field_set:dexhand.ServoVars.swMaxPosition)
+}
+
+// optional uint32 homePosition = 7;
+inline bool ServoVars::_internal_has_homeposition() const {
+  bool value = (_has_bits_[0] & 0x00000040u) != 0;
+  return value;
+}
+inline bool ServoVars::has_homeposition() const {
+  return _internal_has_homeposition();
+}
+inline void ServoVars::clear_homeposition() {
+  homeposition_ = 0u;
+  _has_bits_[0] &= ~0x00000040u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoVars::_internal_homeposition() const {
+  return homeposition_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoVars::homeposition() const {
+  // @@protoc_insertion_point(field_get:dexhand.ServoVars.homePosition)
+  return _internal_homeposition();
+}
+inline void ServoVars::_internal_set_homeposition(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _has_bits_[0] |= 0x00000040u;
+  homeposition_ = value;
+}
+inline void ServoVars::set_homeposition(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_homeposition(value);
+  // @@protoc_insertion_point(field_set:dexhand.ServoVars.homePosition)
+}
+
+// optional uint32 maxLoad = 8;
+inline bool ServoVars::_internal_has_maxload() const {
+  bool value = (_has_bits_[0] & 0x00000080u) != 0;
+  return value;
+}
+inline bool ServoVars::has_maxload() const {
+  return _internal_has_maxload();
+}
+inline void ServoVars::clear_maxload() {
+  maxload_ = 0u;
+  _has_bits_[0] &= ~0x00000080u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoVars::_internal_maxload() const {
+  return maxload_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoVars::maxload() const {
+  // @@protoc_insertion_point(field_get:dexhand.ServoVars.maxLoad)
+  return _internal_maxload();
+}
+inline void ServoVars::_internal_set_maxload(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _has_bits_[0] |= 0x00000080u;
+  maxload_ = value;
+}
+inline void ServoVars::set_maxload(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_maxload(value);
+  // @@protoc_insertion_point(field_set:dexhand.ServoVars.maxLoad)
+}
+
+// optional uint32 maxTemperature = 9;
+inline bool ServoVars::_internal_has_maxtemperature() const {
+  bool value = (_has_bits_[0] & 0x00000100u) != 0;
+  return value;
+}
+inline bool ServoVars::has_maxtemperature() const {
+  return _internal_has_maxtemperature();
+}
+inline void ServoVars::clear_maxtemperature() {
+  maxtemperature_ = 0u;
+  _has_bits_[0] &= ~0x00000100u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoVars::_internal_maxtemperature() const {
+  return maxtemperature_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoVars::maxtemperature() const {
+  // @@protoc_insertion_point(field_get:dexhand.ServoVars.maxTemperature)
+  return _internal_maxtemperature();
+}
+inline void ServoVars::_internal_set_maxtemperature(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _has_bits_[0] |= 0x00000100u;
+  maxtemperature_ = value;
+}
+inline void ServoVars::set_maxtemperature(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_maxtemperature(value);
+  // @@protoc_insertion_point(field_set:dexhand.ServoVars.maxTemperature)
+}
+
+// -------------------------------------------------------------------
+
+// ServoVarsList
+
+// repeated .dexhand.ServoVars servos = 1;
+inline int ServoVarsList::_internal_servos_size() const {
+  return servos_.size();
+}
+inline int ServoVarsList::servos_size() const {
+  return _internal_servos_size();
+}
+inline void ServoVarsList::clear_servos() {
+  servos_.Clear();
+}
+inline ::dexhand::ServoVars* ServoVarsList::mutable_servos(int index) {
+  // @@protoc_insertion_point(field_mutable:dexhand.ServoVarsList.servos)
+  return servos_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::dexhand::ServoVars >*
+ServoVarsList::mutable_servos() {
+  // @@protoc_insertion_point(field_mutable_list:dexhand.ServoVarsList.servos)
+  return &servos_;
+}
+inline const ::dexhand::ServoVars& ServoVarsList::_internal_servos(int index) const {
+  return servos_.Get(index);
+}
+inline const ::dexhand::ServoVars& ServoVarsList::servos(int index) const {
+  // @@protoc_insertion_point(field_get:dexhand.ServoVarsList.servos)
+  return _internal_servos(index);
+}
+inline ::dexhand::ServoVars* ServoVarsList::_internal_add_servos() {
+  return servos_.Add();
+}
+inline ::dexhand::ServoVars* ServoVarsList::add_servos() {
+  // @@protoc_insertion_point(field_add:dexhand.ServoVarsList.servos)
+  return _internal_add_servos();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::dexhand::ServoVars >&
+ServoVarsList::servos() const {
+  // @@protoc_insertion_point(field_list:dexhand.ServoVarsList.servos)
+  return servos_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 
