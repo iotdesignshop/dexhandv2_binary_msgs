@@ -12,4 +12,10 @@ PB_BIND(dexhand_ServoStatus, dexhand_ServoStatus, AUTO)
 PB_BIND(dexhand_ServoStatusList, dexhand_ServoStatusList, 2)
 
 
+PB_BIND(dexhand_ServoVars, dexhand_ServoVars, AUTO)
+
+
+PB_BIND(dexhand_ServoVarsList, dexhand_ServoVarsList, 2)
+
+
 

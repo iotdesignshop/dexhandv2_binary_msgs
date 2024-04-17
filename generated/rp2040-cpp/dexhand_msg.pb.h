@@ -46,6 +46,49 @@ typedef struct _dexhand_ServoStatusList {
     dexhand_ServoStatus servos[20];
 } dexhand_ServoStatusList;
 
+/* ServoVars
+ ServoVars is a message that contains the variables of a servo
+ 
+ uint32 servoId: The id of the servo
+ uint32 status: The status of the servo
+ uint32 hwMinPosition: The hardware minimum position of the servo
+ uint32 hwMaxPosition: The hardware maximum position of the servo
+ uint32 swMinPosition: The software minimum position of the servo
+ uint32 swMaxPosition: The software maximum position of the servo
+ uint32 homePosition: The home position of the servo
+ uint32 maxLoad: The maximum load of the servo
+ uint32 maxTemperature: The maximum temperature of the servo
+ string name: The name of the servo */
+typedef struct _dexhand_ServoVars {
+    bool has_servoId;
+    uint32_t servoId;
+    bool has_status;
+    uint32_t status;
+    bool has_hwMinPosition;
+    uint32_t hwMinPosition;
+    bool has_hwMaxPosition;
+    uint32_t hwMaxPosition;
+    bool has_swMinPosition;
+    uint32_t swMinPosition;
+    bool has_swMaxPosition;
+    uint32_t swMaxPosition;
+    bool has_homePosition;
+    uint32_t homePosition;
+    bool has_maxLoad;
+    uint32_t maxLoad;
+    bool has_maxTemperature;
+    uint32_t maxTemperature;
+} dexhand_ServoVars;
+
+/* ServoVarsList
+ ServoVarsList is a message that contains a list of ServoVars messages
+ 
+ repeated ServoVars servos: A list of ServoVars messages */
+typedef struct _dexhand_ServoVarsList {
+    pb_size_t servos_count;
+    dexhand_ServoVars servos[20];
+} dexhand_ServoVarsList;
+
 
 #ifdef __cplusplus
 extern "C" {
@@ -54,8 +97,12 @@ extern "C" {
 /* Initializer values for message structs */
 #define dexhand_ServoStatus_init_default         {false, 0, false, 0, false, 0, false, 0, false, 0, false, 0, false, 0}
 #define dexhand_ServoStatusList_init_default     {0, {dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default}}
+#define dexhand_ServoVars_init_default           {false, 0, false, 0, false, 0, false, 0, false, 0, false, 0, false, 0, false, 0, false, 0}
+#define dexhand_ServoVarsList_init_default       {0, {dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default}}
 #define dexhand_ServoStatus_init_zero            {false, 0, false, 0, false, 0, false, 0, false, 0, false, 0, false, 0}
 #define dexhand_ServoStatusList_init_zero        {0, {dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero}}
+#define dexhand_ServoVars_init_zero              {false, 0, false, 0, false, 0, false, 0, false, 0, false, 0, false, 0, false, 0, false, 0}
+#define dexhand_ServoVarsList_init_zero          {0, {dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero}}
 
 /* Field tags (for use in manual encoding/decoding) */
 #define dexhand_ServoStatus_servoId_tag          1
@@ -66,6 +113,16 @@ extern "C" {
 #define dexhand_ServoStatus_speed_tag            6
 #define dexhand_ServoStatus_load_tag             7
 #define dexhand_ServoStatusList_servos_tag       1
+#define dexhand_ServoVars_servoId_tag            1
+#define dexhand_ServoVars_status_tag             2
+#define dexhand_ServoVars_hwMinPosition_tag      3
+#define dexhand_ServoVars_hwMaxPosition_tag      4
+#define dexhand_ServoVars_swMinPosition_tag      5
+#define dexhand_ServoVars_swMaxPosition_tag      6
+#define dexhand_ServoVars_homePosition_tag       7
+#define dexhand_ServoVars_maxLoad_tag            8
+#define dexhand_ServoVars_maxTemperature_tag     9
+#define dexhand_ServoVarsList_servos_tag         1
 
 /* Struct field encoding specification for nanopb */
 #define dexhand_ServoStatus_FIELDLIST(X, a) \
@@ -85,17 +142,42 @@ X(a, STATIC,   REPEATED, MESSAGE,  servos,            1)
 #define dexhand_ServoStatusList_DEFAULT NULL
 #define dexhand_ServoStatusList_servos_MSGTYPE dexhand_ServoStatus
 
+#define dexhand_ServoVars_FIELDLIST(X, a) \
+X(a, STATIC,   OPTIONAL, UINT32,   servoId,           1) \
+X(a, STATIC,   OPTIONAL, UINT32,   status,            2) \
+X(a, STATIC,   OPTIONAL, UINT32,   hwMinPosition,     3) \
+X(a, STATIC,   OPTIONAL, UINT32,   hwMaxPosition,     4) \
+X(a, STATIC,   OPTIONAL, UINT32,   swMinPosition,     5) \
+X(a, STATIC,   OPTIONAL, UINT32,   swMaxPosition,     6) \
+X(a, STATIC,   OPTIONAL, UINT32,   homePosition,      7) \
+X(a, STATIC,   OPTIONAL, UINT32,   maxLoad,           8) \
+X(a, STATIC,   OPTIONAL, UINT32,   maxTemperature,    9)
+#define dexhand_ServoVars_CALLBACK NULL
+#define dexhand_ServoVars_DEFAULT NULL
+
+#define dexhand_ServoVarsList_FIELDLIST(X, a) \
+X(a, STATIC,   REPEATED, MESSAGE,  servos,            1)
+#define dexhand_ServoVarsList_CALLBACK NULL
+#define dexhand_ServoVarsList_DEFAULT NULL
+#define dexhand_ServoVarsList_servos_MSGTYPE dexhand_ServoVars
+
 extern const pb_msgdesc_t dexhand_ServoStatus_msg;
 extern const pb_msgdesc_t dexhand_ServoStatusList_msg;
+extern const pb_msgdesc_t dexhand_ServoVars_msg;
+extern const pb_msgdesc_t dexhand_ServoVarsList_msg;
 
 /* Defines for backwards compatibility with code written before nanopb-0.4.0 */
 #define dexhand_ServoStatus_fields &dexhand_ServoStatus_msg
 #define dexhand_ServoStatusList_fields &dexhand_ServoStatusList_msg
+#define dexhand_ServoVars_fields &dexhand_ServoVars_msg
+#define dexhand_ServoVarsList_fields &dexhand_ServoVarsList_msg
 
 /* Maximum encoded size of messages (where known) */
-#define DEXHAND_DEXHAND_MSG_PB_H_MAX_SIZE        dexhand_ServoStatusList_size
+#define DEXHAND_DEXHAND_MSG_PB_H_MAX_SIZE        dexhand_ServoVarsList_size
 #define dexhand_ServoStatusList_size             880
 #define dexhand_ServoStatus_size                 42
+#define dexhand_ServoVarsList_size               1120
+#define dexhand_ServoVars_size                   54
 
 #ifdef __cplusplus
 } /* extern "C" */

@@ -33,3 +33,41 @@ message ServoStatusList
 {
     repeated ServoStatus servos = 1;
 }
+
+
+/* ServoVars
+ * ServoVars is a message that contains the variables of a servo
+ * 
+ * uint32 servoId: The id of the servo
+ * uint32 status: The status of the servo
+ * uint32 hwMinPosition: The hardware minimum position of the servo
+ * uint32 hwMaxPosition: The hardware maximum position of the servo
+ * uint32 swMinPosition: The software minimum position of the servo
+ * uint32 swMaxPosition: The software maximum position of the servo
+ * uint32 homePosition: The home position of the servo
+ * uint32 maxLoad: The maximum load of the servo
+ * uint32 maxTemperature: The maximum temperature of the servo
+ * string name: The name of the servo
+ */
+message ServoVars
+{
+    optional uint32 servoId = 1;
+    optional uint32 status = 2;
+    optional uint32 hwMinPosition = 3;
+    optional uint32 hwMaxPosition = 4;
+    optional uint32 swMinPosition = 5;
+    optional uint32 swMaxPosition = 6;
+    optional uint32 homePosition = 7;
+    optional uint32 maxLoad = 8;
+    optional uint32 maxTemperature = 9;
+}
+
+/* ServoVarsList
+ * ServoVarsList is a message that contains a list of ServoVars messages
+ * 
+ * repeated ServoVars servos: A list of ServoVars messages
+ */
+message ServoVarsList
+{
+    repeated ServoVars servos = 1;
+}
