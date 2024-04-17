@@ -52,14 +52,13 @@ message ServoStatusList
 message ServoVars
 {
     optional uint32 servoId = 1;
-    optional uint32 status = 2;
-    optional uint32 hwMinPosition = 3;
-    optional uint32 hwMaxPosition = 4;
-    optional uint32 swMinPosition = 5;
-    optional uint32 swMaxPosition = 6;
-    optional uint32 homePosition = 7;
-    optional uint32 maxLoad = 8;
-    optional uint32 maxTemperature = 9;
+    optional uint32 hwMinPosition = 2;
+    optional uint32 hwMaxPosition = 3;
+    optional uint32 swMinPosition = 4;
+    optional uint32 swMaxPosition = 5;
+    optional uint32 homePosition = 6;
+    optional uint32 maxLoadPct = 7;
+    optional uint32 maxTemperature = 8;
 }
 
 /* ServoVarsList
