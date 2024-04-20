@@ -87,6 +87,55 @@ typedef struct _dexhand_ServoVarsList {
     dexhand_ServoVars servos[20];
 } dexhand_ServoVarsList;
 
+/* ServoTuning
+ ServoTuning is a message that contains the tuning of a servo
+ 
+ uint32 servoId: The id of the servo
+ uint32 minPosition: The minimum position of the servo
+ uint32 maxPosition: The maximum position of the servo
+ uint32 homePosition: The home position of the servo
+ uint32 odometer: Approximate odometer of the servo (in encoder ticks)
+ uint32 faults: Approximate count of faults on the servo */
+typedef struct _dexhand_ServoTuning {
+    bool has_servoId;
+    uint32_t servoId;
+    bool has_minPosition;
+    uint32_t minPosition;
+    bool has_maxPosition;
+    uint32_t maxPosition;
+    bool has_homePosition;
+    uint32_t homePosition;
+    bool has_odometer;
+    uint32_t odometer;
+    bool has_faults;
+    uint32_t faults;
+} dexhand_ServoTuning;
+
+/* FiwrmwareSaveFile
+
+ Data structure to save firmware configuration and servo analytics
+ 
+ repeated ServoTuning servoTuning: A list of ServoTuning objects for each servo */
+typedef struct _dexhand_FirmwareSaveFile {
+    pb_size_t servoTuning_count;
+    dexhand_ServoTuning servoTuning[20];
+} dexhand_FirmwareSaveFile;
+
+/* FirmwareVersion
+ FirmwareVersion is a message that contains the version of the firmware
+ 
+ string name: The name of the firmware
+ uint32 major: The major version of the firmware
+ uint32 minor: The minor version of the firmware */
+typedef struct _dexhand_FirmwareVersion {
+    bool has_name;
+    char name[32];
+    bool has_major;
+    uint32_t major;
+    bool has_minor;
+    uint32_t minor;
+} dexhand_FirmwareVersion;
+
 
 #ifdef __cplusplus
 extern "C" {
@@ -97,10 +146,16 @@ extern "C" {
 #define dexhand_ServoStatusList_init_default     {0, {dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default}}
 #define dexhand_ServoVars_init_default           {false, 0, false, 0, false, 0, false, 0, false, 0, false, 0, false, 0, false, 0}
 #define dexhand_ServoVarsList_init_default       {0, {dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default}}
+#define dexhand_ServoTuning_init_default         {false, 0, false, 0, false, 0, false, 0, false, 0, false, 0}
+#define dexhand_FirmwareSaveFile_init_default    {0, {dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default}}
+#define dexhand_FirmwareVersion_init_default     {false, "", false, 0, false, 0}
 #define dexhand_ServoStatus_init_zero            {false, 0, false, 0, false, 0, false, 0, false, 0, false, 0, false, 0}
 #define dexhand_ServoStatusList_init_zero        {0, {dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero}}
 #define dexhand_ServoVars_init_zero              {false, 0, false, 0, false, 0, false, 0, false, 0, false, 0, false, 0, false, 0}
 #define dexhand_ServoVarsList_init_zero          {0, {dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero}}
+#define dexhand_ServoTuning_init_zero            {false, 0, false, 0, false, 0, false, 0, false, 0, false, 0}
+#define dexhand_FirmwareSaveFile_init_zero       {0, {dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero}}
+#define dexhand_FirmwareVersion_init_zero        {false, "", false, 0, false, 0}
 
 /* Field tags (for use in manual encoding/decoding) */
 #define dexhand_ServoStatus_servoId_tag          1
@@ -120,6 +175,16 @@ extern "C" {
 #define dexhand_ServoVars_maxLoadPct_tag         7
 #define dexhand_ServoVars_maxTemperature_tag     8
 #define dexhand_ServoVarsList_servos_tag         1
+#define dexhand_ServoTuning_servoId_tag          1
+#define dexhand_ServoTuning_minPosition_tag      2
+#define dexhand_ServoTuning_maxPosition_tag      3
+#define dexhand_ServoTuning_homePosition_tag     4
+#define dexhand_ServoTuning_odometer_tag         5
+#define dexhand_ServoTuning_faults_tag           6
+#define dexhand_FirmwareSaveFile_servoTuning_tag 1
+#define dexhand_FirmwareVersion_name_tag         1
+#define dexhand_FirmwareVersion_major_tag        2
+#define dexhand_FirmwareVersion_minor_tag        3
 
 /* Struct field encoding specification for nanopb */
 #define dexhand_ServoStatus_FIELDLIST(X, a) \
@@ -157,21 +222,53 @@ X(a, STATIC,   REPEATED, MESSAGE,  servos,            1)
 #define dexhand_ServoVarsList_DEFAULT NULL
 #define dexhand_ServoVarsList_servos_MSGTYPE dexhand_ServoVars
 
+#define dexhand_ServoTuning_FIELDLIST(X, a) \
+X(a, STATIC,   OPTIONAL, UINT32,   servoId,           1) \
+X(a, STATIC,   OPTIONAL, UINT32,   minPosition,       2) \
+X(a, STATIC,   OPTIONAL, UINT32,   maxPosition,       3) \
+X(a, STATIC,   OPTIONAL, UINT32,   homePosition,      4) \
+X(a, STATIC,   OPTIONAL, UINT32,   odometer,          5) \
+X(a, STATIC,   OPTIONAL, UINT32,   faults,            6)
+#define dexhand_ServoTuning_CALLBACK NULL
+#define dexhand_ServoTuning_DEFAULT NULL
+
+#define dexhand_FirmwareSaveFile_FIELDLIST(X, a) \
+X(a, STATIC,   REPEATED, MESSAGE,  servoTuning,       1)
+#define dexhand_FirmwareSaveFile_CALLBACK NULL
+#define dexhand_FirmwareSaveFile_DEFAULT NULL
+#define dexhand_FirmwareSaveFile_servoTuning_MSGTYPE dexhand_ServoTuning
+
+#define dexhand_FirmwareVersion_FIELDLIST(X, a) \
+X(a, STATIC,   OPTIONAL, STRING,   name,              1) \
+X(a, STATIC,   OPTIONAL, UINT32,   major,             2) \
+X(a, STATIC,   OPTIONAL, UINT32,   minor,             3)
+#define dexhand_FirmwareVersion_CALLBACK NULL
+#define dexhand_FirmwareVersion_DEFAULT NULL
+
 extern const pb_msgdesc_t dexhand_ServoStatus_msg;
 extern const pb_msgdesc_t dexhand_ServoStatusList_msg;
 extern const pb_msgdesc_t dexhand_ServoVars_msg;
 extern const pb_msgdesc_t dexhand_ServoVarsList_msg;
+extern const pb_msgdesc_t dexhand_ServoTuning_msg;
+extern const pb_msgdesc_t dexhand_FirmwareSaveFile_msg;
+extern const pb_msgdesc_t dexhand_FirmwareVersion_msg;
 
 /* Defines for backwards compatibility with code written before nanopb-0.4.0 */
 #define dexhand_ServoStatus_fields &dexhand_ServoStatus_msg
 #define dexhand_ServoStatusList_fields &dexhand_ServoStatusList_msg
 #define dexhand_ServoVars_fields &dexhand_ServoVars_msg
 #define dexhand_ServoVarsList_fields &dexhand_ServoVarsList_msg
+#define dexhand_ServoTuning_fields &dexhand_ServoTuning_msg
+#define dexhand_FirmwareSaveFile_fields &dexhand_FirmwareSaveFile_msg
+#define dexhand_FirmwareVersion_fields &dexhand_FirmwareVersion_msg
 
 /* Maximum encoded size of messages (where known) */
 #define DEXHAND_DEXHAND_MSG_PB_H_MAX_SIZE        dexhand_ServoVarsList_size
+#define dexhand_FirmwareSaveFile_size            760
+#define dexhand_FirmwareVersion_size             45
 #define dexhand_ServoStatusList_size             880
 #define dexhand_ServoStatus_size                 42
+#define dexhand_ServoTuning_size                 36
 #define dexhand_ServoVarsList_size               1000
 #define dexhand_ServoVars_size                   48
 

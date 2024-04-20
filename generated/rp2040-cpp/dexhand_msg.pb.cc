@@ -18,4 +18,13 @@ PB_BIND(dexhand_ServoVars, dexhand_ServoVars, AUTO)
 PB_BIND(dexhand_ServoVarsList, dexhand_ServoVarsList, 2)
 
 
+PB_BIND(dexhand_ServoTuning, dexhand_ServoTuning, AUTO)
+
+
+PB_BIND(dexhand_FirmwareSaveFile, dexhand_FirmwareSaveFile, 2)
+
+
+PB_BIND(dexhand_FirmwareVersion, dexhand_FirmwareVersion, AUTO)
+
+
 

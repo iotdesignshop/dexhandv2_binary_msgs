@@ -70,3 +70,51 @@ message ServoVarsList
 {
     repeated ServoVars servos = 1;
 }
+
+
+/* ServoTuning
+ * ServoTuning is a message that contains the tuning of a servo
+ * 
+ * uint32 servoId: The id of the servo
+ * uint32 minPosition: The minimum position of the servo
+ * uint32 maxPosition: The maximum position of the servo
+ * uint32 homePosition: The home position of the servo
+ * uint32 odometer: Approximate odometer of the servo (in encoder ticks)
+ * uint32 faults: Approximate count of faults on the servo
+ */
+message ServoTuning
+{
+    optional uint32 servoId = 1;
+    optional uint32 minPosition = 2;
+    optional uint32 maxPosition = 3;
+    optional uint32 homePosition = 4;
+    optional uint32 odometer = 5;
+    optional uint32 faults = 6;
+}
+
+
+/* FiwrmwareSaveFile
+ *
+ * Data structure to save firmware configuration and servo analytics
+ * 
+ * repeated ServoTuning servoTuning: A list of ServoTuning objects for each servo
+ */
+message FirmwareSaveFile
+{
+    repeated ServoTuning servoTuning = 1;
+}
+
+
+/* FirmwareVersion
+ * FirmwareVersion is a message that contains the version of the firmware
+ * 
+ * string name: The name of the firmware
+ * uint32 major: The major version of the firmware
+ * uint32 minor: The minor version of the firmware
+ */
+message FirmwareVersion
+{
+    optional string name = 1;
+    optional uint32 major = 2;
+    optional uint32 minor = 3;
+}

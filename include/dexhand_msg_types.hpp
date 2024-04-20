@@ -14,6 +14,8 @@ enum DexhandMsgID {
     SERVO_POSITION_UPDATE_CMD = 0x03,        // Update the position of one or more servos
     SERVO_VARS_LIST_MSG = 0x04,              // List of variables for all servos
     SERVO_VARS_UPDATE_CMD = 0x05,            // Update the variables for one or more servos
+    FIRMWARE_VERSION_MSG = 0x06,             // Firmware version
+    SAVE_FIRMWARE_TUNING_CMD = 0x07,         // Save firmware tuning values
     NUM_MSGS
 };
 
