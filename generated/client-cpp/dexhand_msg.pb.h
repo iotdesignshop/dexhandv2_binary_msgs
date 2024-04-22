@@ -47,7 +47,7 @@ struct TableStruct_dexhand_5fmsg_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[4]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[7]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -55,12 +55,21 @@ struct TableStruct_dexhand_5fmsg_2eproto {
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_dexhand_5fmsg_2eproto;
 namespace dexhand {
+class FirmwareSaveFile;
+class FirmwareSaveFileDefaultTypeInternal;
+extern FirmwareSaveFileDefaultTypeInternal _FirmwareSaveFile_default_instance_;
+class FirmwareVersion;
+class FirmwareVersionDefaultTypeInternal;
+extern FirmwareVersionDefaultTypeInternal _FirmwareVersion_default_instance_;
 class ServoStatus;
 class ServoStatusDefaultTypeInternal;
 extern ServoStatusDefaultTypeInternal _ServoStatus_default_instance_;
 class ServoStatusList;
 class ServoStatusListDefaultTypeInternal;
 extern ServoStatusListDefaultTypeInternal _ServoStatusList_default_instance_;
+class ServoTuning;
+class ServoTuningDefaultTypeInternal;
+extern ServoTuningDefaultTypeInternal _ServoTuning_default_instance_;
 class ServoVars;
 class ServoVarsDefaultTypeInternal;
 extern ServoVarsDefaultTypeInternal _ServoVars_default_instance_;
@@ -69,8 +78,11 @@ class ServoVarsListDefaultTypeInternal;
 extern ServoVarsListDefaultTypeInternal _ServoVarsList_default_instance_;
 }  // namespace dexhand
 PROTOBUF_NAMESPACE_OPEN
+template<> ::dexhand::FirmwareSaveFile* Arena::CreateMaybeMessage<::dexhand::FirmwareSaveFile>(Arena*);
+template<> ::dexhand::FirmwareVersion* Arena::CreateMaybeMessage<::dexhand::FirmwareVersion>(Arena*);
 template<> ::dexhand::ServoStatus* Arena::CreateMaybeMessage<::dexhand::ServoStatus>(Arena*);
 template<> ::dexhand::ServoStatusList* Arena::CreateMaybeMessage<::dexhand::ServoStatusList>(Arena*);
+template<> ::dexhand::ServoTuning* Arena::CreateMaybeMessage<::dexhand::ServoTuning>(Arena*);
 template<> ::dexhand::ServoVars* Arena::CreateMaybeMessage<::dexhand::ServoVars>(Arena*);
 template<> ::dexhand::ServoVarsList* Arena::CreateMaybeMessage<::dexhand::ServoVarsList>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
@@ -875,6 +887,578 @@ class ServoVarsList PROTOBUF_FINAL :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_dexhand_5fmsg_2eproto;
 };
+// -------------------------------------------------------------------
+
+class ServoTuning PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:dexhand.ServoTuning) */ {
+ public:
+  inline ServoTuning() : ServoTuning(nullptr) {};
+  virtual ~ServoTuning();
+
+  ServoTuning(const ServoTuning& from);
+  ServoTuning(ServoTuning&& from) noexcept
+    : ServoTuning() {
+    *this = ::std::move(from);
+  }
+
+  inline ServoTuning& operator=(const ServoTuning& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ServoTuning& operator=(ServoTuning&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const ServoTuning& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ServoTuning* internal_default_instance() {
+    return reinterpret_cast<const ServoTuning*>(
+               &_ServoTuning_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    4;
+
+  friend void swap(ServoTuning& a, ServoTuning& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ServoTuning* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ServoTuning* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ServoTuning* New() const final {
+    return CreateMaybeMessage<ServoTuning>(nullptr);
+  }
+
+  ServoTuning* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ServoTuning>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const ServoTuning& from);
+  void MergeFrom(const ServoTuning& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ServoTuning* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "dexhand.ServoTuning";
+  }
+  protected:
+  explicit ServoTuning(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_dexhand_5fmsg_2eproto);
+    return ::descriptor_table_dexhand_5fmsg_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kServoIdFieldNumber = 1,
+    kMinPositionFieldNumber = 2,
+    kMaxPositionFieldNumber = 3,
+    kHomePositionFieldNumber = 4,
+    kOdometerFieldNumber = 5,
+    kFaultsFieldNumber = 6,
+  };
+  // optional uint32 servoId = 1;
+  bool has_servoid() const;
+  private:
+  bool _internal_has_servoid() const;
+  public:
+  void clear_servoid();
+  ::PROTOBUF_NAMESPACE_ID::uint32 servoid() const;
+  void set_servoid(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_servoid() const;
+  void _internal_set_servoid(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // optional uint32 minPosition = 2;
+  bool has_minposition() const;
+  private:
+  bool _internal_has_minposition() const;
+  public:
+  void clear_minposition();
+  ::PROTOBUF_NAMESPACE_ID::uint32 minposition() const;
+  void set_minposition(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_minposition() const;
+  void _internal_set_minposition(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // optional uint32 maxPosition = 3;
+  bool has_maxposition() const;
+  private:
+  bool _internal_has_maxposition() const;
+  public:
+  void clear_maxposition();
+  ::PROTOBUF_NAMESPACE_ID::uint32 maxposition() const;
+  void set_maxposition(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_maxposition() const;
+  void _internal_set_maxposition(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // optional uint32 homePosition = 4;
+  bool has_homeposition() const;
+  private:
+  bool _internal_has_homeposition() const;
+  public:
+  void clear_homeposition();
+  ::PROTOBUF_NAMESPACE_ID::uint32 homeposition() const;
+  void set_homeposition(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_homeposition() const;
+  void _internal_set_homeposition(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // optional uint32 odometer = 5;
+  bool has_odometer() const;
+  private:
+  bool _internal_has_odometer() const;
+  public:
+  void clear_odometer();
+  ::PROTOBUF_NAMESPACE_ID::uint32 odometer() const;
+  void set_odometer(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_odometer() const;
+  void _internal_set_odometer(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // optional uint32 faults = 6;
+  bool has_faults() const;
+  private:
+  bool _internal_has_faults() const;
+  public:
+  void clear_faults();
+  ::PROTOBUF_NAMESPACE_ID::uint32 faults() const;
+  void set_faults(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_faults() const;
+  void _internal_set_faults(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:dexhand.ServoTuning)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 servoid_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 minposition_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 maxposition_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 homeposition_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 odometer_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 faults_;
+  friend struct ::TableStruct_dexhand_5fmsg_2eproto;
+};
+// -------------------------------------------------------------------
+
+class FirmwareSaveFile PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:dexhand.FirmwareSaveFile) */ {
+ public:
+  inline FirmwareSaveFile() : FirmwareSaveFile(nullptr) {};
+  virtual ~FirmwareSaveFile();
+
+  FirmwareSaveFile(const FirmwareSaveFile& from);
+  FirmwareSaveFile(FirmwareSaveFile&& from) noexcept
+    : FirmwareSaveFile() {
+    *this = ::std::move(from);
+  }
+
+  inline FirmwareSaveFile& operator=(const FirmwareSaveFile& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline FirmwareSaveFile& operator=(FirmwareSaveFile&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const FirmwareSaveFile& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const FirmwareSaveFile* internal_default_instance() {
+    return reinterpret_cast<const FirmwareSaveFile*>(
+               &_FirmwareSaveFile_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  friend void swap(FirmwareSaveFile& a, FirmwareSaveFile& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(FirmwareSaveFile* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(FirmwareSaveFile* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline FirmwareSaveFile* New() const final {
+    return CreateMaybeMessage<FirmwareSaveFile>(nullptr);
+  }
+
+  FirmwareSaveFile* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<FirmwareSaveFile>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const FirmwareSaveFile& from);
+  void MergeFrom(const FirmwareSaveFile& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(FirmwareSaveFile* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "dexhand.FirmwareSaveFile";
+  }
+  protected:
+  explicit FirmwareSaveFile(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_dexhand_5fmsg_2eproto);
+    return ::descriptor_table_dexhand_5fmsg_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kServoTuningFieldNumber = 1,
+  };
+  // repeated .dexhand.ServoTuning servoTuning = 1;
+  int servotuning_size() const;
+  private:
+  int _internal_servotuning_size() const;
+  public:
+  void clear_servotuning();
+  ::dexhand::ServoTuning* mutable_servotuning(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::dexhand::ServoTuning >*
+      mutable_servotuning();
+  private:
+  const ::dexhand::ServoTuning& _internal_servotuning(int index) const;
+  ::dexhand::ServoTuning* _internal_add_servotuning();
+  public:
+  const ::dexhand::ServoTuning& servotuning(int index) const;
+  ::dexhand::ServoTuning* add_servotuning();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::dexhand::ServoTuning >&
+      servotuning() const;
+
+  // @@protoc_insertion_point(class_scope:dexhand.FirmwareSaveFile)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::dexhand::ServoTuning > servotuning_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_dexhand_5fmsg_2eproto;
+};
+// -------------------------------------------------------------------
+
+class FirmwareVersion PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:dexhand.FirmwareVersion) */ {
+ public:
+  inline FirmwareVersion() : FirmwareVersion(nullptr) {};
+  virtual ~FirmwareVersion();
+
+  FirmwareVersion(const FirmwareVersion& from);
+  FirmwareVersion(FirmwareVersion&& from) noexcept
+    : FirmwareVersion() {
+    *this = ::std::move(from);
+  }
+
+  inline FirmwareVersion& operator=(const FirmwareVersion& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline FirmwareVersion& operator=(FirmwareVersion&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const FirmwareVersion& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const FirmwareVersion* internal_default_instance() {
+    return reinterpret_cast<const FirmwareVersion*>(
+               &_FirmwareVersion_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    6;
+
+  friend void swap(FirmwareVersion& a, FirmwareVersion& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(FirmwareVersion* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(FirmwareVersion* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline FirmwareVersion* New() const final {
+    return CreateMaybeMessage<FirmwareVersion>(nullptr);
+  }
+
+  FirmwareVersion* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<FirmwareVersion>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const FirmwareVersion& from);
+  void MergeFrom(const FirmwareVersion& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(FirmwareVersion* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "dexhand.FirmwareVersion";
+  }
+  protected:
+  explicit FirmwareVersion(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_dexhand_5fmsg_2eproto);
+    return ::descriptor_table_dexhand_5fmsg_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kNameFieldNumber = 1,
+    kMajorFieldNumber = 2,
+    kMinorFieldNumber = 3,
+  };
+  // optional string name = 1;
+  bool has_name() const;
+  private:
+  bool _internal_has_name() const;
+  public:
+  void clear_name();
+  const std::string& name() const;
+  void set_name(const std::string& value);
+  void set_name(std::string&& value);
+  void set_name(const char* value);
+  void set_name(const char* value, size_t size);
+  std::string* mutable_name();
+  std::string* release_name();
+  void set_allocated_name(std::string* name);
+  GOOGLE_PROTOBUF_RUNTIME_DEPRECATED("The unsafe_arena_ accessors for"
+  "    string fields are deprecated and will be removed in a"
+  "    future release.")
+  std::string* unsafe_arena_release_name();
+  GOOGLE_PROTOBUF_RUNTIME_DEPRECATED("The unsafe_arena_ accessors for"
+  "    string fields are deprecated and will be removed in a"
+  "    future release.")
+  void unsafe_arena_set_allocated_name(
+      std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
+  // optional uint32 major = 2;
+  bool has_major() const;
+  private:
+  bool _internal_has_major() const;
+  public:
+  void clear_major();
+  ::PROTOBUF_NAMESPACE_ID::uint32 major() const;
+  void set_major(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_major() const;
+  void _internal_set_major(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // optional uint32 minor = 3;
+  bool has_minor() const;
+  private:
+  bool _internal_has_minor() const;
+  public:
+  void clear_minor();
+  ::PROTOBUF_NAMESPACE_ID::uint32 minor() const;
+  void set_minor(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_minor() const;
+  void _internal_set_minor(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:dexhand.FirmwareVersion)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 major_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 minor_;
+  friend struct ::TableStruct_dexhand_5fmsg_2eproto;
+};
 // ===================================================================
 
 
@@ -1396,9 +1980,383 @@ ServoVarsList::servos() const {
   return servos_;
 }
 
+// -------------------------------------------------------------------
+
+// ServoTuning
+
+// optional uint32 servoId = 1;
+inline bool ServoTuning::_internal_has_servoid() const {
+  bool value = (_has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool ServoTuning::has_servoid() const {
+  return _internal_has_servoid();
+}
+inline void ServoTuning::clear_servoid() {
+  servoid_ = 0u;
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoTuning::_internal_servoid() const {
+  return servoid_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoTuning::servoid() const {
+  // @@protoc_insertion_point(field_get:dexhand.ServoTuning.servoId)
+  return _internal_servoid();
+}
+inline void ServoTuning::_internal_set_servoid(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _has_bits_[0] |= 0x00000001u;
+  servoid_ = value;
+}
+inline void ServoTuning::set_servoid(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_servoid(value);
+  // @@protoc_insertion_point(field_set:dexhand.ServoTuning.servoId)
+}
+
+// optional uint32 minPosition = 2;
+inline bool ServoTuning::_internal_has_minposition() const {
+  bool value = (_has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool ServoTuning::has_minposition() const {
+  return _internal_has_minposition();
+}
+inline void ServoTuning::clear_minposition() {
+  minposition_ = 0u;
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoTuning::_internal_minposition() const {
+  return minposition_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoTuning::minposition() const {
+  // @@protoc_insertion_point(field_get:dexhand.ServoTuning.minPosition)
+  return _internal_minposition();
+}
+inline void ServoTuning::_internal_set_minposition(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _has_bits_[0] |= 0x00000002u;
+  minposition_ = value;
+}
+inline void ServoTuning::set_minposition(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_minposition(value);
+  // @@protoc_insertion_point(field_set:dexhand.ServoTuning.minPosition)
+}
+
+// optional uint32 maxPosition = 3;
+inline bool ServoTuning::_internal_has_maxposition() const {
+  bool value = (_has_bits_[0] & 0x00000004u) != 0;
+  return value;
+}
+inline bool ServoTuning::has_maxposition() const {
+  return _internal_has_maxposition();
+}
+inline void ServoTuning::clear_maxposition() {
+  maxposition_ = 0u;
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoTuning::_internal_maxposition() const {
+  return maxposition_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoTuning::maxposition() const {
+  // @@protoc_insertion_point(field_get:dexhand.ServoTuning.maxPosition)
+  return _internal_maxposition();
+}
+inline void ServoTuning::_internal_set_maxposition(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _has_bits_[0] |= 0x00000004u;
+  maxposition_ = value;
+}
+inline void ServoTuning::set_maxposition(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_maxposition(value);
+  // @@protoc_insertion_point(field_set:dexhand.ServoTuning.maxPosition)
+}
+
+// optional uint32 homePosition = 4;
+inline bool ServoTuning::_internal_has_homeposition() const {
+  bool value = (_has_bits_[0] & 0x00000008u) != 0;
+  return value;
+}
+inline bool ServoTuning::has_homeposition() const {
+  return _internal_has_homeposition();
+}
+inline void ServoTuning::clear_homeposition() {
+  homeposition_ = 0u;
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoTuning::_internal_homeposition() const {
+  return homeposition_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoTuning::homeposition() const {
+  // @@protoc_insertion_point(field_get:dexhand.ServoTuning.homePosition)
+  return _internal_homeposition();
+}
+inline void ServoTuning::_internal_set_homeposition(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _has_bits_[0] |= 0x00000008u;
+  homeposition_ = value;
+}
+inline void ServoTuning::set_homeposition(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_homeposition(value);
+  // @@protoc_insertion_point(field_set:dexhand.ServoTuning.homePosition)
+}
+
+// optional uint32 odometer = 5;
+inline bool ServoTuning::_internal_has_odometer() const {
+  bool value = (_has_bits_[0] & 0x00000010u) != 0;
+  return value;
+}
+inline bool ServoTuning::has_odometer() const {
+  return _internal_has_odometer();
+}
+inline void ServoTuning::clear_odometer() {
+  odometer_ = 0u;
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoTuning::_internal_odometer() const {
+  return odometer_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoTuning::odometer() const {
+  // @@protoc_insertion_point(field_get:dexhand.ServoTuning.odometer)
+  return _internal_odometer();
+}
+inline void ServoTuning::_internal_set_odometer(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _has_bits_[0] |= 0x00000010u;
+  odometer_ = value;
+}
+inline void ServoTuning::set_odometer(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_odometer(value);
+  // @@protoc_insertion_point(field_set:dexhand.ServoTuning.odometer)
+}
+
+// optional uint32 faults = 6;
+inline bool ServoTuning::_internal_has_faults() const {
+  bool value = (_has_bits_[0] & 0x00000020u) != 0;
+  return value;
+}
+inline bool ServoTuning::has_faults() const {
+  return _internal_has_faults();
+}
+inline void ServoTuning::clear_faults() {
+  faults_ = 0u;
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoTuning::_internal_faults() const {
+  return faults_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoTuning::faults() const {
+  // @@protoc_insertion_point(field_get:dexhand.ServoTuning.faults)
+  return _internal_faults();
+}
+inline void ServoTuning::_internal_set_faults(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _has_bits_[0] |= 0x00000020u;
+  faults_ = value;
+}
+inline void ServoTuning::set_faults(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_faults(value);
+  // @@protoc_insertion_point(field_set:dexhand.ServoTuning.faults)
+}
+
+// -------------------------------------------------------------------
+
+// FirmwareSaveFile
+
+// repeated .dexhand.ServoTuning servoTuning = 1;
+inline int FirmwareSaveFile::_internal_servotuning_size() const {
+  return servotuning_.size();
+}
+inline int FirmwareSaveFile::servotuning_size() const {
+  return _internal_servotuning_size();
+}
+inline void FirmwareSaveFile::clear_servotuning() {
+  servotuning_.Clear();
+}
+inline ::dexhand::ServoTuning* FirmwareSaveFile::mutable_servotuning(int index) {
+  // @@protoc_insertion_point(field_mutable:dexhand.FirmwareSaveFile.servoTuning)
+  return servotuning_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::dexhand::ServoTuning >*
+FirmwareSaveFile::mutable_servotuning() {
+  // @@protoc_insertion_point(field_mutable_list:dexhand.FirmwareSaveFile.servoTuning)
+  return &servotuning_;
+}
+inline const ::dexhand::ServoTuning& FirmwareSaveFile::_internal_servotuning(int index) const {
+  return servotuning_.Get(index);
+}
+inline const ::dexhand::ServoTuning& FirmwareSaveFile::servotuning(int index) const {
+  // @@protoc_insertion_point(field_get:dexhand.FirmwareSaveFile.servoTuning)
+  return _internal_servotuning(index);
+}
+inline ::dexhand::ServoTuning* FirmwareSaveFile::_internal_add_servotuning() {
+  return servotuning_.Add();
+}
+inline ::dexhand::ServoTuning* FirmwareSaveFile::add_servotuning() {
+  // @@protoc_insertion_point(field_add:dexhand.FirmwareSaveFile.servoTuning)
+  return _internal_add_servotuning();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::dexhand::ServoTuning >&
+FirmwareSaveFile::servotuning() const {
+  // @@protoc_insertion_point(field_list:dexhand.FirmwareSaveFile.servoTuning)
+  return servotuning_;
+}
+
+// -------------------------------------------------------------------
+
+// FirmwareVersion
+
+// optional string name = 1;
+inline bool FirmwareVersion::_internal_has_name() const {
+  bool value = (_has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool FirmwareVersion::has_name() const {
+  return _internal_has_name();
+}
+inline void FirmwareVersion::clear_name() {
+  name_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline const std::string& FirmwareVersion::name() const {
+  // @@protoc_insertion_point(field_get:dexhand.FirmwareVersion.name)
+  return _internal_name();
+}
+inline void FirmwareVersion::set_name(const std::string& value) {
+  _internal_set_name(value);
+  // @@protoc_insertion_point(field_set:dexhand.FirmwareVersion.name)
+}
+inline std::string* FirmwareVersion::mutable_name() {
+  // @@protoc_insertion_point(field_mutable:dexhand.FirmwareVersion.name)
+  return _internal_mutable_name();
+}
+inline const std::string& FirmwareVersion::_internal_name() const {
+  return name_.Get();
+}
+inline void FirmwareVersion::_internal_set_name(const std::string& value) {
+  _has_bits_[0] |= 0x00000001u;
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+}
+inline void FirmwareVersion::set_name(std::string&& value) {
+  _has_bits_[0] |= 0x00000001u;
+  name_.Set(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:dexhand.FirmwareVersion.name)
+}
+inline void FirmwareVersion::set_name(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  _has_bits_[0] |= 0x00000001u;
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+              GetArena());
+  // @@protoc_insertion_point(field_set_char:dexhand.FirmwareVersion.name)
+}
+inline void FirmwareVersion::set_name(const char* value,
+    size_t size) {
+  _has_bits_[0] |= 0x00000001u;
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:dexhand.FirmwareVersion.name)
+}
+inline std::string* FirmwareVersion::_internal_mutable_name() {
+  _has_bits_[0] |= 0x00000001u;
+  return name_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline std::string* FirmwareVersion::release_name() {
+  // @@protoc_insertion_point(field_release:dexhand.FirmwareVersion.name)
+  if (!_internal_has_name()) {
+    return nullptr;
+  }
+  _has_bits_[0] &= ~0x00000001u;
+  return name_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void FirmwareVersion::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    _has_bits_[0] |= 0x00000001u;
+  } else {
+    _has_bits_[0] &= ~0x00000001u;
+  }
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:dexhand.FirmwareVersion.name)
+}
+inline std::string* FirmwareVersion::unsafe_arena_release_name() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:dexhand.FirmwareVersion.name)
+  GOOGLE_DCHECK(GetArena() != nullptr);
+  _has_bits_[0] &= ~0x00000001u;
+  return name_.UnsafeArenaRelease(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      GetArena());
+}
+inline void FirmwareVersion::unsafe_arena_set_allocated_name(
+    std::string* name) {
+  GOOGLE_DCHECK(GetArena() != nullptr);
+  if (name != nullptr) {
+    _has_bits_[0] |= 0x00000001u;
+  } else {
+    _has_bits_[0] &= ~0x00000001u;
+  }
+  name_.UnsafeArenaSetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      name, GetArena());
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:dexhand.FirmwareVersion.name)
+}
+
+// optional uint32 major = 2;
+inline bool FirmwareVersion::_internal_has_major() const {
+  bool value = (_has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool FirmwareVersion::has_major() const {
+  return _internal_has_major();
+}
+inline void FirmwareVersion::clear_major() {
+  major_ = 0u;
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 FirmwareVersion::_internal_major() const {
+  return major_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 FirmwareVersion::major() const {
+  // @@protoc_insertion_point(field_get:dexhand.FirmwareVersion.major)
+  return _internal_major();
+}
+inline void FirmwareVersion::_internal_set_major(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _has_bits_[0] |= 0x00000002u;
+  major_ = value;
+}
+inline void FirmwareVersion::set_major(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_major(value);
+  // @@protoc_insertion_point(field_set:dexhand.FirmwareVersion.major)
+}
+
+// optional uint32 minor = 3;
+inline bool FirmwareVersion::_internal_has_minor() const {
+  bool value = (_has_bits_[0] & 0x00000004u) != 0;
+  return value;
+}
+inline bool FirmwareVersion::has_minor() const {
+  return _internal_has_minor();
+}
+inline void FirmwareVersion::clear_minor() {
+  minor_ = 0u;
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 FirmwareVersion::_internal_minor() const {
+  return minor_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 FirmwareVersion::minor() const {
+  // @@protoc_insertion_point(field_get:dexhand.FirmwareVersion.minor)
+  return _internal_minor();
+}
+inline void FirmwareVersion::_internal_set_minor(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _has_bits_[0] |= 0x00000004u;
+  minor_ = value;
+}
+inline void FirmwareVersion::set_minor(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_minor(value);
+  // @@protoc_insertion_point(field_set:dexhand.FirmwareVersion.minor)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

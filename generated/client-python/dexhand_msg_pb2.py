@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto2',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x11\x64\x65xhand_msg.proto\x12\x07\x64\x65xhand\"\x83\x01\n\x0bServoStatus\x12\x0f\n\x07servoId\x18\x01 \x01(\r\x12\x0e\n\x06status\x18\x02 \x01(\r\x12\x0f\n\x07voltage\x18\x03 \x01(\r\x12\x13\n\x0btemperature\x18\x04 \x01(\r\x12\x10\n\x08position\x18\x05 \x01(\r\x12\r\n\x05speed\x18\x06 \x01(\x11\x12\x0c\n\x04load\x18\x07 \x01(\x11\"7\n\x0fServoStatusList\x12$\n\x06servos\x18\x01 \x03(\x0b\x32\x14.dexhand.ServoStatus\"\xba\x01\n\tServoVars\x12\x0f\n\x07servoId\x18\x01 \x01(\r\x12\x15\n\rhwMinPosition\x18\x02 \x01(\r\x12\x15\n\rhwMaxPosition\x18\x03 \x01(\r\x12\x15\n\rswMinPosition\x18\x04 \x01(\r\x12\x15\n\rswMaxPosition\x18\x05 \x01(\r\x12\x14\n\x0chomePosition\x18\x06 \x01(\r\x12\x12\n\nmaxLoadPct\x18\x07 \x01(\r\x12\x16\n\x0emaxTemperature\x18\x08 \x01(\r\"3\n\rServoVarsList\x12\"\n\x06servos\x18\x01 \x03(\x0b\x32\x12.dexhand.ServoVars'
+  serialized_pb=b'\n\x11\x64\x65xhand_msg.proto\x12\x07\x64\x65xhand\"\x83\x01\n\x0bServoStatus\x12\x0f\n\x07servoId\x18\x01 \x01(\r\x12\x0e\n\x06status\x18\x02 \x01(\r\x12\x0f\n\x07voltage\x18\x03 \x01(\r\x12\x13\n\x0btemperature\x18\x04 \x01(\r\x12\x10\n\x08position\x18\x05 \x01(\r\x12\r\n\x05speed\x18\x06 \x01(\x11\x12\x0c\n\x04load\x18\x07 \x01(\x11\"7\n\x0fServoStatusList\x12$\n\x06servos\x18\x01 \x03(\x0b\x32\x14.dexhand.ServoStatus\"\xba\x01\n\tServoVars\x12\x0f\n\x07servoId\x18\x01 \x01(\r\x12\x15\n\rhwMinPosition\x18\x02 \x01(\r\x12\x15\n\rhwMaxPosition\x18\x03 \x01(\r\x12\x15\n\rswMinPosition\x18\x04 \x01(\r\x12\x15\n\rswMaxPosition\x18\x05 \x01(\r\x12\x14\n\x0chomePosition\x18\x06 \x01(\r\x12\x12\n\nmaxLoadPct\x18\x07 \x01(\r\x12\x16\n\x0emaxTemperature\x18\x08 \x01(\r\"3\n\rServoVarsList\x12\"\n\x06servos\x18\x01 \x03(\x0b\x32\x12.dexhand.ServoVars\"\x80\x01\n\x0bServoTuning\x12\x0f\n\x07servoId\x18\x01 \x01(\r\x12\x13\n\x0bminPosition\x18\x02 \x01(\r\x12\x13\n\x0bmaxPosition\x18\x03 \x01(\r\x12\x14\n\x0chomePosition\x18\x04 \x01(\r\x12\x10\n\x08odometer\x18\x05 \x01(\r\x12\x0e\n\x06\x66\x61ults\x18\x06 \x01(\r\"=\n\x10\x46irmwareSaveFile\x12)\n\x0bservoTuning\x18\x01 \x03(\x0b\x32\x14.dexhand.ServoTuning\"=\n\x0f\x46irmwareVersion\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05major\x18\x02 \x01(\r\x12\r\n\x05minor\x18\x03 \x01(\r'
 )
 
 
@@ -243,12 +243,161 @@ _SERVOVARSLIST = _descriptor.Descriptor(
   serialized_end=461,
 )
 
+
+_SERVOTUNING = _descriptor.Descriptor(
+  name='ServoTuning',
+  full_name='dexhand.ServoTuning',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='servoId', full_name='dexhand.ServoTuning.servoId', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='minPosition', full_name='dexhand.ServoTuning.minPosition', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='maxPosition', full_name='dexhand.ServoTuning.maxPosition', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='homePosition', full_name='dexhand.ServoTuning.homePosition', index=3,
+      number=4, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='odometer', full_name='dexhand.ServoTuning.odometer', index=4,
+      number=5, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='faults', full_name='dexhand.ServoTuning.faults', index=5,
+      number=6, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=464,
+  serialized_end=592,
+)
+
+
+_FIRMWARESAVEFILE = _descriptor.Descriptor(
+  name='FirmwareSaveFile',
+  full_name='dexhand.FirmwareSaveFile',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='servoTuning', full_name='dexhand.FirmwareSaveFile.servoTuning', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=594,
+  serialized_end=655,
+)
+
+
+_FIRMWAREVERSION = _descriptor.Descriptor(
+  name='FirmwareVersion',
+  full_name='dexhand.FirmwareVersion',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='name', full_name='dexhand.FirmwareVersion.name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='major', full_name='dexhand.FirmwareVersion.major', index=1,
+      number=2, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='minor', full_name='dexhand.FirmwareVersion.minor', index=2,
+      number=3, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto2',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=657,
+  serialized_end=718,
+)
+
 _SERVOSTATUSLIST.fields_by_name['servos'].message_type = _SERVOSTATUS
 _SERVOVARSLIST.fields_by_name['servos'].message_type = _SERVOVARS
+_FIRMWARESAVEFILE.fields_by_name['servoTuning'].message_type = _SERVOTUNING
 DESCRIPTOR.message_types_by_name['ServoStatus'] = _SERVOSTATUS
 DESCRIPTOR.message_types_by_name['ServoStatusList'] = _SERVOSTATUSLIST
 DESCRIPTOR.message_types_by_name['ServoVars'] = _SERVOVARS
 DESCRIPTOR.message_types_by_name['ServoVarsList'] = _SERVOVARSLIST
+DESCRIPTOR.message_types_by_name['ServoTuning'] = _SERVOTUNING
+DESCRIPTOR.message_types_by_name['FirmwareSaveFile'] = _FIRMWARESAVEFILE
+DESCRIPTOR.message_types_by_name['FirmwareVersion'] = _FIRMWAREVERSION
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 ServoStatus = _reflection.GeneratedProtocolMessageType('ServoStatus', (_message.Message,), {
@@ -278,6 +427,27 @@ ServoVarsList = _reflection.GeneratedProtocolMessageType('ServoVarsList', (_mess
   # @@protoc_insertion_point(class_scope:dexhand.ServoVarsList)
   })
 _sym_db.RegisterMessage(ServoVarsList)
+
+ServoTuning = _reflection.GeneratedProtocolMessageType('ServoTuning', (_message.Message,), {
+  'DESCRIPTOR' : _SERVOTUNING,
+  '__module__' : 'dexhand_msg_pb2'
+  # @@protoc_insertion_point(class_scope:dexhand.ServoTuning)
+  })
+_sym_db.RegisterMessage(ServoTuning)
+
+FirmwareSaveFile = _reflection.GeneratedProtocolMessageType('FirmwareSaveFile', (_message.Message,), {
+  'DESCRIPTOR' : _FIRMWARESAVEFILE,
+  '__module__' : 'dexhand_msg_pb2'
+  # @@protoc_insertion_point(class_scope:dexhand.FirmwareSaveFile)
+  })
+_sym_db.RegisterMessage(FirmwareSaveFile)
+
+FirmwareVersion = _reflection.GeneratedProtocolMessageType('FirmwareVersion', (_message.Message,), {
+  'DESCRIPTOR' : _FIRMWAREVERSION,
+  '__module__' : 'dexhand_msg_pb2'
+  # @@protoc_insertion_point(class_scope:dexhand.FirmwareVersion)
+  })
+_sym_db.RegisterMessage(FirmwareVersion)
 
 
 # @@protoc_insertion_point(module_scope)
