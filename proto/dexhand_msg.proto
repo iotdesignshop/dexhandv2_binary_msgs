@@ -59,6 +59,7 @@ message ServoVars
     optional uint32 homePosition = 6;
     optional uint32 maxLoadPct = 7;
     optional uint32 maxTemperature = 8;
+    optional bool torqueEnable = 9;
 }
 
 /* ServoVarsList
@@ -118,3 +119,4 @@ message FirmwareVersion
     optional uint32 major = 2;
     optional uint32 minor = 3;
 }
+

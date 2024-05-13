@@ -76,6 +76,8 @@ typedef struct _dexhand_ServoVars {
     uint32_t maxLoadPct;
     bool has_maxTemperature;
     uint32_t maxTemperature;
+    bool has_torqueEnable;
+    bool torqueEnable;
 } dexhand_ServoVars;
 
 /* ServoVarsList
@@ -144,14 +146,14 @@ extern "C" {
 /* Initializer values for message structs */
 #define dexhand_ServoStatus_init_default         {false, 0, false, 0, false, 0, false, 0, false, 0, false, 0, false, 0}
 #define dexhand_ServoStatusList_init_default     {0, {dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default, dexhand_ServoStatus_init_default}}
-#define dexhand_ServoVars_init_default           {false, 0, false, 0, false, 0, false, 0, false, 0, false, 0, false, 0, false, 0}
+#define dexhand_ServoVars_init_default           {false, 0, false, 0, false, 0, false, 0, false, 0, false, 0, false, 0, false, 0, false, 0}
 #define dexhand_ServoVarsList_init_default       {0, {dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default, dexhand_ServoVars_init_default}}
 #define dexhand_ServoTuning_init_default         {false, 0, false, 0, false, 0, false, 0, false, 0, false, 0}
 #define dexhand_FirmwareSaveFile_init_default    {0, {dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default}}
 #define dexhand_FirmwareVersion_init_default     {false, "", false, 0, false, 0}
 #define dexhand_ServoStatus_init_zero            {false, 0, false, 0, false, 0, false, 0, false, 0, false, 0, false, 0}
 #define dexhand_ServoStatusList_init_zero        {0, {dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero}}
-#define dexhand_ServoVars_init_zero              {false, 0, false, 0, false, 0, false, 0, false, 0, false, 0, false, 0, false, 0}
+#define dexhand_ServoVars_init_zero              {false, 0, false, 0, false, 0, false, 0, false, 0, false, 0, false, 0, false, 0, false, 0}
 #define dexhand_ServoVarsList_init_zero          {0, {dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero, dexhand_ServoVars_init_zero}}
 #define dexhand_ServoTuning_init_zero            {false, 0, false, 0, false, 0, false, 0, false, 0, false, 0}
 #define dexhand_FirmwareSaveFile_init_zero       {0, {dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero}}
@@ -174,6 +176,7 @@ extern "C" {
 #define dexhand_ServoVars_homePosition_tag       6
 #define dexhand_ServoVars_maxLoadPct_tag         7
 #define dexhand_ServoVars_maxTemperature_tag     8
+#define dexhand_ServoVars_torqueEnable_tag       9
 #define dexhand_ServoVarsList_servos_tag         1
 #define dexhand_ServoTuning_servoId_tag          1
 #define dexhand_ServoTuning_minPosition_tag      2
@@ -212,7 +215,8 @@ X(a, STATIC,   OPTIONAL, UINT32,   swMinPosition,     4) \
 X(a, STATIC,   OPTIONAL, UINT32,   swMaxPosition,     5) \
 X(a, STATIC,   OPTIONAL, UINT32,   homePosition,      6) \
 X(a, STATIC,   OPTIONAL, UINT32,   maxLoadPct,        7) \
-X(a, STATIC,   OPTIONAL, UINT32,   maxTemperature,    8)
+X(a, STATIC,   OPTIONAL, UINT32,   maxTemperature,    8) \
+X(a, STATIC,   OPTIONAL, BOOL,     torqueEnable,      9)
 #define dexhand_ServoVars_CALLBACK NULL
 #define dexhand_ServoVars_DEFAULT NULL
 
@@ -269,8 +273,8 @@ extern const pb_msgdesc_t dexhand_FirmwareVersion_msg;
 #define dexhand_ServoStatusList_size             880
 #define dexhand_ServoStatus_size                 42
 #define dexhand_ServoTuning_size                 36
-#define dexhand_ServoVarsList_size               1000
-#define dexhand_ServoVars_size                   48
+#define dexhand_ServoVarsList_size               1040
+#define dexhand_ServoVars_size                   50
 
 #ifdef __cplusplus
 } /* extern "C" */
