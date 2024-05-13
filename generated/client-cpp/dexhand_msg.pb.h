@@ -610,6 +610,7 @@ class ServoVars PROTOBUF_FINAL :
     kHomePositionFieldNumber = 6,
     kMaxLoadPctFieldNumber = 7,
     kMaxTemperatureFieldNumber = 8,
+    kTorqueEnableFieldNumber = 9,
   };
   // optional uint32 servoId = 1;
   bool has_servoid() const;
@@ -715,6 +716,19 @@ class ServoVars PROTOBUF_FINAL :
   void _internal_set_maxtemperature(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
+  // optional bool torqueEnable = 9;
+  bool has_torqueenable() const;
+  private:
+  bool _internal_has_torqueenable() const;
+  public:
+  void clear_torqueenable();
+  bool torqueenable() const;
+  void set_torqueenable(bool value);
+  private:
+  bool _internal_torqueenable() const;
+  void _internal_set_torqueenable(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:dexhand.ServoVars)
  private:
   class _Internal;
@@ -732,6 +746,7 @@ class ServoVars PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::uint32 homeposition_;
   ::PROTOBUF_NAMESPACE_ID::uint32 maxloadpct_;
   ::PROTOBUF_NAMESPACE_ID::uint32 maxtemperature_;
+  bool torqueenable_;
   friend struct ::TableStruct_dexhand_5fmsg_2eproto;
 };
 // -------------------------------------------------------------------
@@ -1935,6 +1950,34 @@ inline void ServoVars::_internal_set_maxtemperature(::PROTOBUF_NAMESPACE_ID::uin
 inline void ServoVars::set_maxtemperature(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   _internal_set_maxtemperature(value);
   // @@protoc_insertion_point(field_set:dexhand.ServoVars.maxTemperature)
+}
+
+// optional bool torqueEnable = 9;
+inline bool ServoVars::_internal_has_torqueenable() const {
+  bool value = (_has_bits_[0] & 0x00000100u) != 0;
+  return value;
+}
+inline bool ServoVars::has_torqueenable() const {
+  return _internal_has_torqueenable();
+}
+inline void ServoVars::clear_torqueenable() {
+  torqueenable_ = false;
+  _has_bits_[0] &= ~0x00000100u;
+}
+inline bool ServoVars::_internal_torqueenable() const {
+  return torqueenable_;
+}
+inline bool ServoVars::torqueenable() const {
+  // @@protoc_insertion_point(field_get:dexhand.ServoVars.torqueEnable)
+  return _internal_torqueenable();
+}
+inline void ServoVars::_internal_set_torqueenable(bool value) {
+  _has_bits_[0] |= 0x00000100u;
+  torqueenable_ = value;
+}
+inline void ServoVars::set_torqueenable(bool value) {
+  _internal_set_torqueenable(value);
+  // @@protoc_insertion_point(field_set:dexhand.ServoVars.torqueEnable)
 }
 
 // -------------------------------------------------------------------

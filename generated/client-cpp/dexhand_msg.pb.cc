@@ -191,6 +191,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_dexhand_5fmsg_2eproto::offsets
   PROTOBUF_FIELD_OFFSET(::dexhand::ServoVars, homeposition_),
   PROTOBUF_FIELD_OFFSET(::dexhand::ServoVars, maxloadpct_),
   PROTOBUF_FIELD_OFFSET(::dexhand::ServoVars, maxtemperature_),
+  PROTOBUF_FIELD_OFFSET(::dexhand::ServoVars, torqueenable_),
   0,
   1,
   2,
@@ -199,6 +200,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_dexhand_5fmsg_2eproto::offsets
   5,
   6,
   7,
+  8,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::dexhand::ServoVarsList, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -243,11 +245,11 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_dexhand_5fmsg_2eproto::offsets
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, 12, sizeof(::dexhand::ServoStatus)},
   { 19, -1, sizeof(::dexhand::ServoStatusList)},
-  { 25, 38, sizeof(::dexhand::ServoVars)},
-  { 46, -1, sizeof(::dexhand::ServoVarsList)},
-  { 52, 63, sizeof(::dexhand::ServoTuning)},
-  { 69, -1, sizeof(::dexhand::FirmwareSaveFile)},
-  { 75, 83, sizeof(::dexhand::FirmwareVersion)},
+  { 25, 39, sizeof(::dexhand::ServoVars)},
+  { 48, -1, sizeof(::dexhand::ServoVarsList)},
+  { 54, 65, sizeof(::dexhand::ServoTuning)},
+  { 71, -1, sizeof(::dexhand::FirmwareSaveFile)},
+  { 77, 85, sizeof(::dexhand::FirmwareVersion)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -266,19 +268,20 @@ const char descriptor_table_protodef_dexhand_5fmsg_2eproto[] PROTOBUF_SECTION_VA
   "\007voltage\030\003 \001(\r\022\023\n\013temperature\030\004 \001(\r\022\020\n\010p"
   "osition\030\005 \001(\r\022\r\n\005speed\030\006 \001(\021\022\014\n\004load\030\007 \001"
   "(\021\"7\n\017ServoStatusList\022$\n\006servos\030\001 \003(\0132\024."
-  "dexhand.ServoStatus\"\272\001\n\tServoVars\022\017\n\007ser"
+  "dexhand.ServoStatus\"\320\001\n\tServoVars\022\017\n\007ser"
   "voId\030\001 \001(\r\022\025\n\rhwMinPosition\030\002 \001(\r\022\025\n\rhwM"
   "axPosition\030\003 \001(\r\022\025\n\rswMinPosition\030\004 \001(\r\022"
   "\025\n\rswMaxPosition\030\005 \001(\r\022\024\n\014homePosition\030\006"
   " \001(\r\022\022\n\nmaxLoadPct\030\007 \001(\r\022\026\n\016maxTemperatu"
-  "re\030\010 \001(\r\"3\n\rServoVarsList\022\"\n\006servos\030\001 \003("
-  "\0132\022.dexhand.ServoVars\"\200\001\n\013ServoTuning\022\017\n"
-  "\007servoId\030\001 \001(\r\022\023\n\013minPosition\030\002 \001(\r\022\023\n\013m"
-  "axPosition\030\003 \001(\r\022\024\n\014homePosition\030\004 \001(\r\022\020"
-  "\n\010odometer\030\005 \001(\r\022\016\n\006faults\030\006 \001(\r\"=\n\020Firm"
-  "wareSaveFile\022)\n\013servoTuning\030\001 \003(\0132\024.dexh"
-  "and.ServoTuning\"=\n\017FirmwareVersion\022\014\n\004na"
-  "me\030\001 \001(\t\022\r\n\005major\030\002 \001(\r\022\r\n\005minor\030\003 \001(\r"
+  "re\030\010 \001(\r\022\024\n\014torqueEnable\030\t \001(\010\"3\n\rServoV"
+  "arsList\022\"\n\006servos\030\001 \003(\0132\022.dexhand.ServoV"
+  "ars\"\200\001\n\013ServoTuning\022\017\n\007servoId\030\001 \001(\r\022\023\n\013"
+  "minPosition\030\002 \001(\r\022\023\n\013maxPosition\030\003 \001(\r\022\024"
+  "\n\014homePosition\030\004 \001(\r\022\020\n\010odometer\030\005 \001(\r\022\016"
+  "\n\006faults\030\006 \001(\r\"=\n\020FirmwareSaveFile\022)\n\013se"
+  "rvoTuning\030\001 \003(\0132\024.dexhand.ServoTuning\"=\n"
+  "\017FirmwareVersion\022\014\n\004name\030\001 \001(\t\022\r\n\005major\030"
+  "\002 \001(\r\022\r\n\005minor\030\003 \001(\r"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_dexhand_5fmsg_2eproto_deps[1] = {
 };
@@ -293,7 +296,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_dex
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_dexhand_5fmsg_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_dexhand_5fmsg_2eproto = {
-  false, false, descriptor_table_protodef_dexhand_5fmsg_2eproto, "dexhand_msg.proto", 718,
+  false, false, descriptor_table_protodef_dexhand_5fmsg_2eproto, "dexhand_msg.proto", 740,
   &descriptor_table_dexhand_5fmsg_2eproto_once, descriptor_table_dexhand_5fmsg_2eproto_sccs, descriptor_table_dexhand_5fmsg_2eproto_deps, 7, 0,
   schemas, file_default_instances, TableStruct_dexhand_5fmsg_2eproto::offsets,
   file_level_metadata_dexhand_5fmsg_2eproto, 7, file_level_enum_descriptors_dexhand_5fmsg_2eproto, file_level_service_descriptors_dexhand_5fmsg_2eproto,
@@ -928,6 +931,9 @@ class ServoVars::_Internal {
   static void set_has_maxtemperature(HasBits* has_bits) {
     (*has_bits)[0] |= 128u;
   }
+  static void set_has_torqueenable(HasBits* has_bits) {
+    (*has_bits)[0] |= 256u;
+  }
 };
 
 ServoVars::ServoVars(::PROTOBUF_NAMESPACE_ID::Arena* arena)
@@ -941,15 +947,15 @@ ServoVars::ServoVars(const ServoVars& from)
       _has_bits_(from._has_bits_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&servoid_, &from.servoid_,
-    static_cast<size_t>(reinterpret_cast<char*>(&maxtemperature_) -
-    reinterpret_cast<char*>(&servoid_)) + sizeof(maxtemperature_));
+    static_cast<size_t>(reinterpret_cast<char*>(&torqueenable_) -
+    reinterpret_cast<char*>(&servoid_)) + sizeof(torqueenable_));
   // @@protoc_insertion_point(copy_constructor:dexhand.ServoVars)
 }
 
 void ServoVars::SharedCtor() {
   ::memset(&servoid_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&maxtemperature_) -
-      reinterpret_cast<char*>(&servoid_)) + sizeof(maxtemperature_));
+      reinterpret_cast<char*>(&torqueenable_) -
+      reinterpret_cast<char*>(&servoid_)) + sizeof(torqueenable_));
 }
 
 ServoVars::~ServoVars() {
@@ -989,6 +995,7 @@ void ServoVars::Clear() {
         reinterpret_cast<char*>(&maxtemperature_) -
         reinterpret_cast<char*>(&servoid_)) + sizeof(maxtemperature_));
   }
+  torqueenable_ = false;
   _has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -1063,6 +1070,14 @@ const char* ServoVars::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
           _Internal::set_has_maxtemperature(&has_bits);
           maxtemperature_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // optional bool torqueEnable = 9;
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 72)) {
+          _Internal::set_has_torqueenable(&has_bits);
+          torqueenable_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1144,6 +1159,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(8, this->_internal_maxtemperature(), target);
   }
 
+  // optional bool torqueEnable = 9;
+  if (cached_has_bits & 0x00000100u) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(9, this->_internal_torqueenable(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -1219,6 +1240,11 @@ size_t ServoVars::ByteSizeLong() const {
     }
 
   }
+  // optional bool torqueEnable = 9;
+  if (cached_has_bits & 0x00000100u) {
+    total_size += 1 + 1;
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -1278,6 +1304,9 @@ void ServoVars::MergeFrom(const ServoVars& from) {
     }
     _has_bits_[0] |= cached_has_bits;
   }
+  if (cached_has_bits & 0x00000100u) {
+    _internal_set_torqueenable(from._internal_torqueenable());
+  }
 }
 
 void ServoVars::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -1303,8 +1332,8 @@ void ServoVars::InternalSwap(ServoVars* other) {
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(ServoVars, maxtemperature_)
-      + sizeof(ServoVars::maxtemperature_)
+      PROTOBUF_FIELD_OFFSET(ServoVars, torqueenable_)
+      + sizeof(ServoVars::torqueenable_)
       - PROTOBUF_FIELD_OFFSET(ServoVars, servoid_)>(
           reinterpret_cast<char*>(&servoid_),
           reinterpret_cast<char*>(&other->servoid_));
