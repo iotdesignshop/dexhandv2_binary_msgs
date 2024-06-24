@@ -19,6 +19,7 @@ enum DexhandMsgID {
     RESET_HAND_CMD = 0x08,                   // Reset the hand
     SERVO_REGISTER_WRITE_CMD = 0x09,         // Write a servo register
     HAND_PARAMS_WRITE_CMD = 0x0A,            // Write a hand parameter
+    AUTO_TUNE_THUMB_CMD = 0x0B,              // Auto tune the thumb dynamics
     NUM_MSGS
 };
 

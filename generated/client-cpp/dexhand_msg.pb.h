@@ -47,7 +47,7 @@ struct TableStruct_dexhand_5fmsg_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[7]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[9]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -61,6 +61,12 @@ extern FirmwareSaveFileDefaultTypeInternal _FirmwareSaveFile_default_instance_;
 class FirmwareVersion;
 class FirmwareVersionDefaultTypeInternal;
 extern FirmwareVersionDefaultTypeInternal _FirmwareVersion_default_instance_;
+class HandParams;
+class HandParamsDefaultTypeInternal;
+extern HandParamsDefaultTypeInternal _HandParams_default_instance_;
+class ServoRegister;
+class ServoRegisterDefaultTypeInternal;
+extern ServoRegisterDefaultTypeInternal _ServoRegister_default_instance_;
 class ServoStatus;
 class ServoStatusDefaultTypeInternal;
 extern ServoStatusDefaultTypeInternal _ServoStatus_default_instance_;
@@ -80,6 +86,8 @@ extern ServoVarsListDefaultTypeInternal _ServoVarsList_default_instance_;
 PROTOBUF_NAMESPACE_OPEN
 template<> ::dexhand::FirmwareSaveFile* Arena::CreateMaybeMessage<::dexhand::FirmwareSaveFile>(Arena*);
 template<> ::dexhand::FirmwareVersion* Arena::CreateMaybeMessage<::dexhand::FirmwareVersion>(Arena*);
+template<> ::dexhand::HandParams* Arena::CreateMaybeMessage<::dexhand::HandParams>(Arena*);
+template<> ::dexhand::ServoRegister* Arena::CreateMaybeMessage<::dexhand::ServoRegister>(Arena*);
 template<> ::dexhand::ServoStatus* Arena::CreateMaybeMessage<::dexhand::ServoStatus>(Arena*);
 template<> ::dexhand::ServoStatusList* Arena::CreateMaybeMessage<::dexhand::ServoStatusList>(Arena*);
 template<> ::dexhand::ServoTuning* Arena::CreateMaybeMessage<::dexhand::ServoTuning>(Arena*);
@@ -1474,6 +1482,349 @@ class FirmwareVersion PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::uint32 minor_;
   friend struct ::TableStruct_dexhand_5fmsg_2eproto;
 };
+// -------------------------------------------------------------------
+
+class ServoRegister PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:dexhand.ServoRegister) */ {
+ public:
+  inline ServoRegister() : ServoRegister(nullptr) {};
+  virtual ~ServoRegister();
+
+  ServoRegister(const ServoRegister& from);
+  ServoRegister(ServoRegister&& from) noexcept
+    : ServoRegister() {
+    *this = ::std::move(from);
+  }
+
+  inline ServoRegister& operator=(const ServoRegister& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ServoRegister& operator=(ServoRegister&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const ServoRegister& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ServoRegister* internal_default_instance() {
+    return reinterpret_cast<const ServoRegister*>(
+               &_ServoRegister_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    7;
+
+  friend void swap(ServoRegister& a, ServoRegister& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ServoRegister* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ServoRegister* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ServoRegister* New() const final {
+    return CreateMaybeMessage<ServoRegister>(nullptr);
+  }
+
+  ServoRegister* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<ServoRegister>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const ServoRegister& from);
+  void MergeFrom(const ServoRegister& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ServoRegister* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "dexhand.ServoRegister";
+  }
+  protected:
+  explicit ServoRegister(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_dexhand_5fmsg_2eproto);
+    return ::descriptor_table_dexhand_5fmsg_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kServoIdFieldNumber = 1,
+    kAddressFieldNumber = 2,
+    kValueFieldNumber = 3,
+    kSizeFieldNumber = 4,
+  };
+  // optional uint32 servoId = 1;
+  bool has_servoid() const;
+  private:
+  bool _internal_has_servoid() const;
+  public:
+  void clear_servoid();
+  ::PROTOBUF_NAMESPACE_ID::uint32 servoid() const;
+  void set_servoid(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_servoid() const;
+  void _internal_set_servoid(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // optional uint32 address = 2;
+  bool has_address() const;
+  private:
+  bool _internal_has_address() const;
+  public:
+  void clear_address();
+  ::PROTOBUF_NAMESPACE_ID::uint32 address() const;
+  void set_address(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_address() const;
+  void _internal_set_address(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // optional uint32 value = 3;
+  bool has_value() const;
+  private:
+  bool _internal_has_value() const;
+  public:
+  void clear_value();
+  ::PROTOBUF_NAMESPACE_ID::uint32 value() const;
+  void set_value(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_value() const;
+  void _internal_set_value(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // optional uint32 size = 4;
+  bool has_size() const;
+  private:
+  bool _internal_has_size() const;
+  public:
+  void clear_size();
+  ::PROTOBUF_NAMESPACE_ID::uint32 size() const;
+  void set_size(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_size() const;
+  void _internal_set_size(::PROTOBUF_NAMESPACE_ID::uint32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:dexhand.ServoRegister)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 servoid_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 address_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 value_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 size_;
+  friend struct ::TableStruct_dexhand_5fmsg_2eproto;
+};
+// -------------------------------------------------------------------
+
+class HandParams PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:dexhand.HandParams) */ {
+ public:
+  inline HandParams() : HandParams(nullptr) {};
+  virtual ~HandParams();
+
+  HandParams(const HandParams& from);
+  HandParams(HandParams&& from) noexcept
+    : HandParams() {
+    *this = ::std::move(from);
+  }
+
+  inline HandParams& operator=(const HandParams& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline HandParams& operator=(HandParams&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const HandParams& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const HandParams* internal_default_instance() {
+    return reinterpret_cast<const HandParams*>(
+               &_HandParams_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    8;
+
+  friend void swap(HandParams& a, HandParams& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(HandParams* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(HandParams* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline HandParams* New() const final {
+    return CreateMaybeMessage<HandParams>(nullptr);
+  }
+
+  HandParams* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<HandParams>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const HandParams& from);
+  void MergeFrom(const HandParams& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(HandParams* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "dexhand.HandParams";
+  }
+  protected:
+  explicit HandParams(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_dexhand_5fmsg_2eproto);
+    return ::descriptor_table_dexhand_5fmsg_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kAutoThumbExtensorFieldNumber = 1,
+  };
+  // optional bool autoThumbExtensor = 1;
+  bool has_autothumbextensor() const;
+  private:
+  bool _internal_has_autothumbextensor() const;
+  public:
+  void clear_autothumbextensor();
+  bool autothumbextensor() const;
+  void set_autothumbextensor(bool value);
+  private:
+  bool _internal_autothumbextensor() const;
+  void _internal_set_autothumbextensor(bool value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:dexhand.HandParams)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  bool autothumbextensor_;
+  friend struct ::TableStruct_dexhand_5fmsg_2eproto;
+};
 // ===================================================================
 
 
@@ -2391,9 +2742,161 @@ inline void FirmwareVersion::set_minor(::PROTOBUF_NAMESPACE_ID::uint32 value) {
   // @@protoc_insertion_point(field_set:dexhand.FirmwareVersion.minor)
 }
 
+// -------------------------------------------------------------------
+
+// ServoRegister
+
+// optional uint32 servoId = 1;
+inline bool ServoRegister::_internal_has_servoid() const {
+  bool value = (_has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool ServoRegister::has_servoid() const {
+  return _internal_has_servoid();
+}
+inline void ServoRegister::clear_servoid() {
+  servoid_ = 0u;
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoRegister::_internal_servoid() const {
+  return servoid_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoRegister::servoid() const {
+  // @@protoc_insertion_point(field_get:dexhand.ServoRegister.servoId)
+  return _internal_servoid();
+}
+inline void ServoRegister::_internal_set_servoid(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _has_bits_[0] |= 0x00000001u;
+  servoid_ = value;
+}
+inline void ServoRegister::set_servoid(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_servoid(value);
+  // @@protoc_insertion_point(field_set:dexhand.ServoRegister.servoId)
+}
+
+// optional uint32 address = 2;
+inline bool ServoRegister::_internal_has_address() const {
+  bool value = (_has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool ServoRegister::has_address() const {
+  return _internal_has_address();
+}
+inline void ServoRegister::clear_address() {
+  address_ = 0u;
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoRegister::_internal_address() const {
+  return address_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoRegister::address() const {
+  // @@protoc_insertion_point(field_get:dexhand.ServoRegister.address)
+  return _internal_address();
+}
+inline void ServoRegister::_internal_set_address(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _has_bits_[0] |= 0x00000002u;
+  address_ = value;
+}
+inline void ServoRegister::set_address(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_address(value);
+  // @@protoc_insertion_point(field_set:dexhand.ServoRegister.address)
+}
+
+// optional uint32 value = 3;
+inline bool ServoRegister::_internal_has_value() const {
+  bool value = (_has_bits_[0] & 0x00000004u) != 0;
+  return value;
+}
+inline bool ServoRegister::has_value() const {
+  return _internal_has_value();
+}
+inline void ServoRegister::clear_value() {
+  value_ = 0u;
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoRegister::_internal_value() const {
+  return value_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoRegister::value() const {
+  // @@protoc_insertion_point(field_get:dexhand.ServoRegister.value)
+  return _internal_value();
+}
+inline void ServoRegister::_internal_set_value(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _has_bits_[0] |= 0x00000004u;
+  value_ = value;
+}
+inline void ServoRegister::set_value(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_value(value);
+  // @@protoc_insertion_point(field_set:dexhand.ServoRegister.value)
+}
+
+// optional uint32 size = 4;
+inline bool ServoRegister::_internal_has_size() const {
+  bool value = (_has_bits_[0] & 0x00000008u) != 0;
+  return value;
+}
+inline bool ServoRegister::has_size() const {
+  return _internal_has_size();
+}
+inline void ServoRegister::clear_size() {
+  size_ = 0u;
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoRegister::_internal_size() const {
+  return size_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::uint32 ServoRegister::size() const {
+  // @@protoc_insertion_point(field_get:dexhand.ServoRegister.size)
+  return _internal_size();
+}
+inline void ServoRegister::_internal_set_size(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _has_bits_[0] |= 0x00000008u;
+  size_ = value;
+}
+inline void ServoRegister::set_size(::PROTOBUF_NAMESPACE_ID::uint32 value) {
+  _internal_set_size(value);
+  // @@protoc_insertion_point(field_set:dexhand.ServoRegister.size)
+}
+
+// -------------------------------------------------------------------
+
+// HandParams
+
+// optional bool autoThumbExtensor = 1;
+inline bool HandParams::_internal_has_autothumbextensor() const {
+  bool value = (_has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool HandParams::has_autothumbextensor() const {
+  return _internal_has_autothumbextensor();
+}
+inline void HandParams::clear_autothumbextensor() {
+  autothumbextensor_ = false;
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline bool HandParams::_internal_autothumbextensor() const {
+  return autothumbextensor_;
+}
+inline bool HandParams::autothumbextensor() const {
+  // @@protoc_insertion_point(field_get:dexhand.HandParams.autoThumbExtensor)
+  return _internal_autothumbextensor();
+}
+inline void HandParams::_internal_set_autothumbextensor(bool value) {
+  _has_bits_[0] |= 0x00000001u;
+  autothumbextensor_ = value;
+}
+inline void HandParams::set_autothumbextensor(bool value) {
+  _internal_set_autothumbextensor(value);
+  // @@protoc_insertion_point(field_set:dexhand.HandParams.autoThumbExtensor)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
