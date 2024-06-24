@@ -17,6 +17,8 @@ enum DexhandMsgID {
     FIRMWARE_VERSION_MSG = 0x06,             // Firmware version
     SAVE_FIRMWARE_TUNING_CMD = 0x07,         // Save firmware tuning values
     RESET_HAND_CMD = 0x08,                   // Reset the hand
+    SERVO_REGISTER_WRITE_CMD = 0x09,         // Write a servo register
+    HAND_PARAMS_WRITE_CMD = 0x0A,            // Write a hand parameter
     NUM_MSGS
 };
 

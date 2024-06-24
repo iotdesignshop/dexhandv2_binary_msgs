@@ -120,3 +120,30 @@ message FirmwareVersion
     optional uint32 minor = 3;
 }
 
+
+
+/* ServoRegister
+ * ServoRegister is a message that contains the register value from a servo
+ * uint32 servoId: The id of the servo
+ * uint32 address: The address of the register
+ * uint32 value: The value of the register
+ * uint32 size: The size of the register (1 = byte, 2 = word)
+ */
+message ServoRegister
+{
+    optional uint32 servoId = 1;
+    optional uint32 address = 2;
+    optional uint32 value = 3;
+    optional uint32 size = 4;
+}
+
+/* HandParams
+* HandParams is a message that contains global parameters or settings for the hand
+* 
+* bool autoThumbExtensor: Whether the thumb extensor should be automatically controlled by the firmware
+*/
+message HandParams
+{
+    optional bool autoThumbExtensor = 1;
+}
+

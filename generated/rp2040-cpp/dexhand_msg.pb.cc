@@ -27,4 +27,10 @@ PB_BIND(dexhand_FirmwareSaveFile, dexhand_FirmwareSaveFile, 2)
 PB_BIND(dexhand_FirmwareVersion, dexhand_FirmwareVersion, AUTO)
 
 
+PB_BIND(dexhand_ServoRegister, dexhand_ServoRegister, AUTO)
+
+
+PB_BIND(dexhand_HandParams, dexhand_HandParams, AUTO)
+
+
 

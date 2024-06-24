@@ -138,6 +138,32 @@ typedef struct _dexhand_FirmwareVersion {
     uint32_t minor;
 } dexhand_FirmwareVersion;
 
+/* ServoRegister
+ ServoRegister is a message that contains the register value from a servo
+ uint32 servoId: The id of the servo
+ uint32 address: The address of the register
+ uint32 value: The value of the register
+ uint32 size: The size of the register (1 = byte, 2 = word) */
+typedef struct _dexhand_ServoRegister {
+    bool has_servoId;
+    uint32_t servoId;
+    bool has_address;
+    uint32_t address;
+    bool has_value;
+    uint32_t value;
+    bool has_size;
+    uint32_t size;
+} dexhand_ServoRegister;
+
+/* HandParams
+ HandParams is a message that contains global parameters or settings for the hand
+ 
+ bool autoThumbExtensor: Whether the thumb extensor should be automatically controlled by the firmware */
+typedef struct _dexhand_HandParams {
+    bool has_autoThumbExtensor;
+    bool autoThumbExtensor;
+} dexhand_HandParams;
+
 
 #ifdef __cplusplus
 extern "C" {
@@ -151,6 +177,8 @@ extern "C" {
 #define dexhand_ServoTuning_init_default         {false, 0, false, 0, false, 0, false, 0, false, 0, false, 0}
 #define dexhand_FirmwareSaveFile_init_default    {0, {dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default, dexhand_ServoTuning_init_default}}
 #define dexhand_FirmwareVersion_init_default     {false, "", false, 0, false, 0}
+#define dexhand_ServoRegister_init_default       {false, 0, false, 0, false, 0, false, 0}
+#define dexhand_HandParams_init_default          {false, 0}
 #define dexhand_ServoStatus_init_zero            {false, 0, false, 0, false, 0, false, 0, false, 0, false, 0, false, 0}
 #define dexhand_ServoStatusList_init_zero        {0, {dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero, dexhand_ServoStatus_init_zero}}
 #define dexhand_ServoVars_init_zero              {false, 0, false, 0, false, 0, false, 0, false, 0, false, 0, false, 0, false, 0, false, 0}
@@ -158,6 +186,8 @@ extern "C" {
 #define dexhand_ServoTuning_init_zero            {false, 0, false, 0, false, 0, false, 0, false, 0, false, 0}
 #define dexhand_FirmwareSaveFile_init_zero       {0, {dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero, dexhand_ServoTuning_init_zero}}
 #define dexhand_FirmwareVersion_init_zero        {false, "", false, 0, false, 0}
+#define dexhand_ServoRegister_init_zero          {false, 0, false, 0, false, 0, false, 0}
+#define dexhand_HandParams_init_zero             {false, 0}
 
 /* Field tags (for use in manual encoding/decoding) */
 #define dexhand_ServoStatus_servoId_tag          1
@@ -188,6 +218,11 @@ extern "C" {
 #define dexhand_FirmwareVersion_name_tag         1
 #define dexhand_FirmwareVersion_major_tag        2
 #define dexhand_FirmwareVersion_minor_tag        3
+#define dexhand_ServoRegister_servoId_tag        1
+#define dexhand_ServoRegister_address_tag        2
+#define dexhand_ServoRegister_value_tag          3
+#define dexhand_ServoRegister_size_tag           4
+#define dexhand_HandParams_autoThumbExtensor_tag 1
 
 /* Struct field encoding specification for nanopb */
 #define dexhand_ServoStatus_FIELDLIST(X, a) \
@@ -249,6 +284,19 @@ X(a, STATIC,   OPTIONAL, UINT32,   minor,             3)
 #define dexhand_FirmwareVersion_CALLBACK NULL
 #define dexhand_FirmwareVersion_DEFAULT NULL
 
+#define dexhand_ServoRegister_FIELDLIST(X, a) \
+X(a, STATIC,   OPTIONAL, UINT32,   servoId,           1) \
+X(a, STATIC,   OPTIONAL, UINT32,   address,           2) \
+X(a, STATIC,   OPTIONAL, UINT32,   value,             3) \
+X(a, STATIC,   OPTIONAL, UINT32,   size,              4)
+#define dexhand_ServoRegister_CALLBACK NULL
+#define dexhand_ServoRegister_DEFAULT NULL
+
+#define dexhand_HandParams_FIELDLIST(X, a) \
+X(a, STATIC,   OPTIONAL, BOOL,     autoThumbExtensor,   1)
+#define dexhand_HandParams_CALLBACK NULL
+#define dexhand_HandParams_DEFAULT NULL
+
 extern const pb_msgdesc_t dexhand_ServoStatus_msg;
 extern const pb_msgdesc_t dexhand_ServoStatusList_msg;
 extern const pb_msgdesc_t dexhand_ServoVars_msg;
@@ -256,6 +304,8 @@ extern const pb_msgdesc_t dexhand_ServoVarsList_msg;
 extern const pb_msgdesc_t dexhand_ServoTuning_msg;
 extern const pb_msgdesc_t dexhand_FirmwareSaveFile_msg;
 extern const pb_msgdesc_t dexhand_FirmwareVersion_msg;
+extern const pb_msgdesc_t dexhand_ServoRegister_msg;
+extern const pb_msgdesc_t dexhand_HandParams_msg;
 
 /* Defines for backwards compatibility with code written before nanopb-0.4.0 */
 #define dexhand_ServoStatus_fields &dexhand_ServoStatus_msg
@@ -265,11 +315,15 @@ extern const pb_msgdesc_t dexhand_FirmwareVersion_msg;
 #define dexhand_ServoTuning_fields &dexhand_ServoTuning_msg
 #define dexhand_FirmwareSaveFile_fields &dexhand_FirmwareSaveFile_msg
 #define dexhand_FirmwareVersion_fields &dexhand_FirmwareVersion_msg
+#define dexhand_ServoRegister_fields &dexhand_ServoRegister_msg
+#define dexhand_HandParams_fields &dexhand_HandParams_msg
 
 /* Maximum encoded size of messages (where known) */
 #define DEXHAND_DEXHAND_MSG_PB_H_MAX_SIZE        dexhand_ServoVarsList_size
 #define dexhand_FirmwareSaveFile_size            760
 #define dexhand_FirmwareVersion_size             45
+#define dexhand_HandParams_size                  2
+#define dexhand_ServoRegister_size               24
 #define dexhand_ServoStatusList_size             880
 #define dexhand_ServoStatus_size                 42
 #define dexhand_ServoTuning_size                 36
