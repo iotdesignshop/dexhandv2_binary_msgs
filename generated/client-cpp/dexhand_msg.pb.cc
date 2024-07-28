@@ -208,12 +208,13 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_dexhand_5fmsg_2eproto::offsets
   4,
   5,
   6,
-  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::dexhand::ServoStatusList, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::dexhand::ServoStatusList, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::dexhand::ServoStatusList, servos_),
+  ~0u,
   PROTOBUF_FIELD_OFFSET(::dexhand::ServoVars, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::dexhand::ServoVars, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -237,12 +238,13 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_dexhand_5fmsg_2eproto::offsets
   6,
   7,
   8,
-  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::dexhand::ServoVarsList, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::dexhand::ServoVarsList, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::dexhand::ServoVarsList, servos_),
+  ~0u,
   PROTOBUF_FIELD_OFFSET(::dexhand::ServoTuning, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::dexhand::ServoTuning, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -260,12 +262,13 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_dexhand_5fmsg_2eproto::offsets
   3,
   4,
   5,
-  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::dexhand::FirmwareSaveFile, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::dexhand::FirmwareSaveFile, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::dexhand::FirmwareSaveFile, servotuning_),
+  ~0u,
   PROTOBUF_FIELD_OFFSET(::dexhand::FirmwareVersion, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::dexhand::FirmwareVersion, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -300,14 +303,14 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_dexhand_5fmsg_2eproto::offsets
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, 12, sizeof(::dexhand::ServoStatus)},
-  { 19, -1, sizeof(::dexhand::ServoStatusList)},
-  { 25, 39, sizeof(::dexhand::ServoVars)},
-  { 48, -1, sizeof(::dexhand::ServoVarsList)},
-  { 54, 65, sizeof(::dexhand::ServoTuning)},
-  { 71, -1, sizeof(::dexhand::FirmwareSaveFile)},
-  { 77, 85, sizeof(::dexhand::FirmwareVersion)},
-  { 88, 97, sizeof(::dexhand::ServoRegister)},
-  { 101, 107, sizeof(::dexhand::HandParams)},
+  { 19, 25, sizeof(::dexhand::ServoStatusList)},
+  { 26, 40, sizeof(::dexhand::ServoVars)},
+  { 49, 55, sizeof(::dexhand::ServoVarsList)},
+  { 56, 67, sizeof(::dexhand::ServoTuning)},
+  { 73, 79, sizeof(::dexhand::FirmwareSaveFile)},
+  { 80, 88, sizeof(::dexhand::FirmwareVersion)},
+  { 91, 100, sizeof(::dexhand::ServoRegister)},
+  { 104, 110, sizeof(::dexhand::HandParams)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -360,15 +363,16 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_dex
   &scc_info_ServoVarsList_dexhand_5fmsg_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_dexhand_5fmsg_2eproto_once;
+static bool descriptor_table_dexhand_5fmsg_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_dexhand_5fmsg_2eproto = {
-  false, false, descriptor_table_protodef_dexhand_5fmsg_2eproto, "dexhand_msg.proto", 861,
+  &descriptor_table_dexhand_5fmsg_2eproto_initialized, descriptor_table_protodef_dexhand_5fmsg_2eproto, "dexhand_msg.proto", 861,
   &descriptor_table_dexhand_5fmsg_2eproto_once, descriptor_table_dexhand_5fmsg_2eproto_sccs, descriptor_table_dexhand_5fmsg_2eproto_deps, 9, 0,
   schemas, file_default_instances, TableStruct_dexhand_5fmsg_2eproto::offsets,
   file_level_metadata_dexhand_5fmsg_2eproto, 9, file_level_enum_descriptors_dexhand_5fmsg_2eproto, file_level_service_descriptors_dexhand_5fmsg_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_dexhand_5fmsg_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_dexhand_5fmsg_2eproto)), true);
+static bool dynamic_init_dummy_dexhand_5fmsg_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_dexhand_5fmsg_2eproto), true);
 namespace dexhand {
 
 // ===================================================================
@@ -401,16 +405,16 @@ class ServoStatus::_Internal {
   }
 };
 
-ServoStatus::ServoStatus(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+ServoStatus::ServoStatus()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:dexhand.ServoStatus)
+  // @@protoc_insertion_point(constructor:dexhand.ServoStatus)
 }
 ServoStatus::ServoStatus(const ServoStatus& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::memcpy(&servoid_, &from.servoid_,
     static_cast<size_t>(reinterpret_cast<char*>(&load_) -
     reinterpret_cast<char*>(&servoid_)) + sizeof(load_));
@@ -426,19 +430,11 @@ void ServoStatus::SharedCtor() {
 ServoStatus::~ServoStatus() {
   // @@protoc_insertion_point(destructor:dexhand.ServoStatus)
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void ServoStatus::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
-void ServoStatus::ArenaDtor(void* object) {
-  ServoStatus* _this = reinterpret_cast< ServoStatus* >(object);
-  (void)_this;
-}
-void ServoStatus::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void ServoStatus::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -461,13 +457,12 @@ void ServoStatus::Clear() {
         reinterpret_cast<char*>(&servoid_)) + sizeof(load_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear();
 }
 
 const char* ServoStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -477,7 +472,7 @@ const char* ServoStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           _Internal::set_has_servoid(&has_bits);
-          servoid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          servoid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -485,7 +480,7 @@ const char* ServoStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           _Internal::set_has_status(&has_bits);
-          status_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          status_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -493,7 +488,7 @@ const char* ServoStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
           _Internal::set_has_voltage(&has_bits);
-          voltage_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          voltage_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -501,7 +496,7 @@ const char* ServoStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
           _Internal::set_has_temperature(&has_bits);
-          temperature_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          temperature_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -509,7 +504,7 @@ const char* ServoStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
           _Internal::set_has_position(&has_bits);
-          position_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          position_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -535,9 +530,7 @@ const char* ServoStatus::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -603,7 +596,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:dexhand.ServoStatus)
   return target;
@@ -696,7 +689,7 @@ void ServoStatus::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void ServoStatus::MergeFrom(const ServoStatus& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:dexhand.ServoStatus)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -747,14 +740,15 @@ bool ServoStatus::IsInitialized() const {
 
 void ServoStatus::InternalSwap(ServoStatus* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(ServoStatus, load_)
-      + sizeof(ServoStatus::load_)
-      - PROTOBUF_FIELD_OFFSET(ServoStatus, servoid_)>(
-          reinterpret_cast<char*>(&servoid_),
-          reinterpret_cast<char*>(&other->servoid_));
+  swap(servoid_, other->servoid_);
+  swap(status_, other->status_);
+  swap(voltage_, other->voltage_);
+  swap(temperature_, other->temperature_);
+  swap(position_, other->position_);
+  swap(speed_, other->speed_);
+  swap(load_, other->load_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ServoStatus::GetMetadata() const {
@@ -768,19 +762,20 @@ void ServoStatusList::InitAsDefaultInstance() {
 }
 class ServoStatusList::_Internal {
  public:
+  using HasBits = decltype(std::declval<ServoStatusList>()._has_bits_);
 };
 
-ServoStatusList::ServoStatusList(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
-  servos_(arena) {
+ServoStatusList::ServoStatusList()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:dexhand.ServoStatusList)
+  // @@protoc_insertion_point(constructor:dexhand.ServoStatusList)
 }
 ServoStatusList::ServoStatusList(const ServoStatusList& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr),
+      _has_bits_(from._has_bits_),
       servos_(from.servos_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:dexhand.ServoStatusList)
 }
 
@@ -791,19 +786,11 @@ void ServoStatusList::SharedCtor() {
 ServoStatusList::~ServoStatusList() {
   // @@protoc_insertion_point(destructor:dexhand.ServoStatusList)
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void ServoStatusList::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
-void ServoStatusList::ArenaDtor(void* object) {
-  ServoStatusList* _this = reinterpret_cast< ServoStatusList* >(object);
-  (void)_this;
-}
-void ServoStatusList::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void ServoStatusList::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -820,12 +807,12 @@ void ServoStatusList::Clear() {
   (void) cached_has_bits;
 
   servos_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _has_bits_.Clear();
+  _internal_metadata_.Clear();
 }
 
 const char* ServoStatusList::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -849,9 +836,7 @@ const char* ServoStatusList::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -881,7 +866,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:dexhand.ServoStatusList)
   return target;
@@ -929,7 +914,7 @@ void ServoStatusList::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void ServoStatusList::MergeFrom(const ServoStatusList& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:dexhand.ServoStatusList)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -956,7 +941,8 @@ bool ServoStatusList::IsInitialized() const {
 
 void ServoStatusList::InternalSwap(ServoStatusList* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_has_bits_[0], other->_has_bits_[0]);
   servos_.InternalSwap(&other->servos_);
 }
 
@@ -1001,16 +987,16 @@ class ServoVars::_Internal {
   }
 };
 
-ServoVars::ServoVars(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+ServoVars::ServoVars()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:dexhand.ServoVars)
+  // @@protoc_insertion_point(constructor:dexhand.ServoVars)
 }
 ServoVars::ServoVars(const ServoVars& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::memcpy(&servoid_, &from.servoid_,
     static_cast<size_t>(reinterpret_cast<char*>(&torqueenable_) -
     reinterpret_cast<char*>(&servoid_)) + sizeof(torqueenable_));
@@ -1026,19 +1012,11 @@ void ServoVars::SharedCtor() {
 ServoVars::~ServoVars() {
   // @@protoc_insertion_point(destructor:dexhand.ServoVars)
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void ServoVars::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
-void ServoVars::ArenaDtor(void* object) {
-  ServoVars* _this = reinterpret_cast< ServoVars* >(object);
-  (void)_this;
-}
-void ServoVars::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void ServoVars::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -1062,13 +1040,12 @@ void ServoVars::Clear() {
   }
   torqueenable_ = false;
   _has_bits_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear();
 }
 
 const char* ServoVars::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -1078,7 +1055,7 @@ const char* ServoVars::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           _Internal::set_has_servoid(&has_bits);
-          servoid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          servoid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1086,7 +1063,7 @@ const char* ServoVars::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           _Internal::set_has_hwminposition(&has_bits);
-          hwminposition_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          hwminposition_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1094,7 +1071,7 @@ const char* ServoVars::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
           _Internal::set_has_hwmaxposition(&has_bits);
-          hwmaxposition_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          hwmaxposition_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1102,7 +1079,7 @@ const char* ServoVars::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
           _Internal::set_has_swminposition(&has_bits);
-          swminposition_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          swminposition_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1110,7 +1087,7 @@ const char* ServoVars::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
           _Internal::set_has_swmaxposition(&has_bits);
-          swmaxposition_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          swmaxposition_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1118,7 +1095,7 @@ const char* ServoVars::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
           _Internal::set_has_homeposition(&has_bits);
-          homeposition_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          homeposition_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1126,7 +1103,7 @@ const char* ServoVars::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
           _Internal::set_has_maxloadpct(&has_bits);
-          maxloadpct_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          maxloadpct_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1134,7 +1111,7 @@ const char* ServoVars::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
           _Internal::set_has_maxtemperature(&has_bits);
-          maxtemperature_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          maxtemperature_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1142,7 +1119,7 @@ const char* ServoVars::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       case 9:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 72)) {
           _Internal::set_has_torqueenable(&has_bits);
-          torqueenable_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          torqueenable_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1152,9 +1129,7 @@ const char* ServoVars::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -1232,7 +1207,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:dexhand.ServoVars)
   return target;
@@ -1337,7 +1312,7 @@ void ServoVars::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void ServoVars::MergeFrom(const ServoVars& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:dexhand.ServoVars)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1394,14 +1369,17 @@ bool ServoVars::IsInitialized() const {
 
 void ServoVars::InternalSwap(ServoVars* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(ServoVars, torqueenable_)
-      + sizeof(ServoVars::torqueenable_)
-      - PROTOBUF_FIELD_OFFSET(ServoVars, servoid_)>(
-          reinterpret_cast<char*>(&servoid_),
-          reinterpret_cast<char*>(&other->servoid_));
+  swap(servoid_, other->servoid_);
+  swap(hwminposition_, other->hwminposition_);
+  swap(hwmaxposition_, other->hwmaxposition_);
+  swap(swminposition_, other->swminposition_);
+  swap(swmaxposition_, other->swmaxposition_);
+  swap(homeposition_, other->homeposition_);
+  swap(maxloadpct_, other->maxloadpct_);
+  swap(maxtemperature_, other->maxtemperature_);
+  swap(torqueenable_, other->torqueenable_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ServoVars::GetMetadata() const {
@@ -1415,19 +1393,20 @@ void ServoVarsList::InitAsDefaultInstance() {
 }
 class ServoVarsList::_Internal {
  public:
+  using HasBits = decltype(std::declval<ServoVarsList>()._has_bits_);
 };
 
-ServoVarsList::ServoVarsList(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
-  servos_(arena) {
+ServoVarsList::ServoVarsList()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:dexhand.ServoVarsList)
+  // @@protoc_insertion_point(constructor:dexhand.ServoVarsList)
 }
 ServoVarsList::ServoVarsList(const ServoVarsList& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr),
+      _has_bits_(from._has_bits_),
       servos_(from.servos_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:dexhand.ServoVarsList)
 }
 
@@ -1438,19 +1417,11 @@ void ServoVarsList::SharedCtor() {
 ServoVarsList::~ServoVarsList() {
   // @@protoc_insertion_point(destructor:dexhand.ServoVarsList)
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void ServoVarsList::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
-void ServoVarsList::ArenaDtor(void* object) {
-  ServoVarsList* _this = reinterpret_cast< ServoVarsList* >(object);
-  (void)_this;
-}
-void ServoVarsList::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void ServoVarsList::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -1467,12 +1438,12 @@ void ServoVarsList::Clear() {
   (void) cached_has_bits;
 
   servos_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _has_bits_.Clear();
+  _internal_metadata_.Clear();
 }
 
 const char* ServoVarsList::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -1496,9 +1467,7 @@ const char* ServoVarsList::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -1528,7 +1497,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:dexhand.ServoVarsList)
   return target;
@@ -1576,7 +1545,7 @@ void ServoVarsList::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void ServoVarsList::MergeFrom(const ServoVarsList& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:dexhand.ServoVarsList)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1603,7 +1572,8 @@ bool ServoVarsList::IsInitialized() const {
 
 void ServoVarsList::InternalSwap(ServoVarsList* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_has_bits_[0], other->_has_bits_[0]);
   servos_.InternalSwap(&other->servos_);
 }
 
@@ -1639,16 +1609,16 @@ class ServoTuning::_Internal {
   }
 };
 
-ServoTuning::ServoTuning(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+ServoTuning::ServoTuning()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:dexhand.ServoTuning)
+  // @@protoc_insertion_point(constructor:dexhand.ServoTuning)
 }
 ServoTuning::ServoTuning(const ServoTuning& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::memcpy(&servoid_, &from.servoid_,
     static_cast<size_t>(reinterpret_cast<char*>(&faults_) -
     reinterpret_cast<char*>(&servoid_)) + sizeof(faults_));
@@ -1664,19 +1634,11 @@ void ServoTuning::SharedCtor() {
 ServoTuning::~ServoTuning() {
   // @@protoc_insertion_point(destructor:dexhand.ServoTuning)
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void ServoTuning::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
-void ServoTuning::ArenaDtor(void* object) {
-  ServoTuning* _this = reinterpret_cast< ServoTuning* >(object);
-  (void)_this;
-}
-void ServoTuning::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void ServoTuning::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -1699,13 +1661,12 @@ void ServoTuning::Clear() {
         reinterpret_cast<char*>(&servoid_)) + sizeof(faults_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear();
 }
 
 const char* ServoTuning::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -1715,7 +1676,7 @@ const char* ServoTuning::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           _Internal::set_has_servoid(&has_bits);
-          servoid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          servoid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1723,7 +1684,7 @@ const char* ServoTuning::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           _Internal::set_has_minposition(&has_bits);
-          minposition_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          minposition_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1731,7 +1692,7 @@ const char* ServoTuning::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
           _Internal::set_has_maxposition(&has_bits);
-          maxposition_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          maxposition_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1739,7 +1700,7 @@ const char* ServoTuning::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
           _Internal::set_has_homeposition(&has_bits);
-          homeposition_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          homeposition_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1747,7 +1708,7 @@ const char* ServoTuning::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
           _Internal::set_has_odometer(&has_bits);
-          odometer_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          odometer_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1755,7 +1716,7 @@ const char* ServoTuning::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
           _Internal::set_has_faults(&has_bits);
-          faults_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          faults_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1765,9 +1726,7 @@ const char* ServoTuning::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -1827,7 +1786,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:dexhand.ServoTuning)
   return target;
@@ -1913,7 +1872,7 @@ void ServoTuning::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void ServoTuning::MergeFrom(const ServoTuning& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:dexhand.ServoTuning)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1961,14 +1920,14 @@ bool ServoTuning::IsInitialized() const {
 
 void ServoTuning::InternalSwap(ServoTuning* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(ServoTuning, faults_)
-      + sizeof(ServoTuning::faults_)
-      - PROTOBUF_FIELD_OFFSET(ServoTuning, servoid_)>(
-          reinterpret_cast<char*>(&servoid_),
-          reinterpret_cast<char*>(&other->servoid_));
+  swap(servoid_, other->servoid_);
+  swap(minposition_, other->minposition_);
+  swap(maxposition_, other->maxposition_);
+  swap(homeposition_, other->homeposition_);
+  swap(odometer_, other->odometer_);
+  swap(faults_, other->faults_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ServoTuning::GetMetadata() const {
@@ -1982,19 +1941,20 @@ void FirmwareSaveFile::InitAsDefaultInstance() {
 }
 class FirmwareSaveFile::_Internal {
  public:
+  using HasBits = decltype(std::declval<FirmwareSaveFile>()._has_bits_);
 };
 
-FirmwareSaveFile::FirmwareSaveFile(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
-  servotuning_(arena) {
+FirmwareSaveFile::FirmwareSaveFile()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:dexhand.FirmwareSaveFile)
+  // @@protoc_insertion_point(constructor:dexhand.FirmwareSaveFile)
 }
 FirmwareSaveFile::FirmwareSaveFile(const FirmwareSaveFile& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr),
+      _has_bits_(from._has_bits_),
       servotuning_(from.servotuning_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:dexhand.FirmwareSaveFile)
 }
 
@@ -2005,19 +1965,11 @@ void FirmwareSaveFile::SharedCtor() {
 FirmwareSaveFile::~FirmwareSaveFile() {
   // @@protoc_insertion_point(destructor:dexhand.FirmwareSaveFile)
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void FirmwareSaveFile::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
-void FirmwareSaveFile::ArenaDtor(void* object) {
-  FirmwareSaveFile* _this = reinterpret_cast< FirmwareSaveFile* >(object);
-  (void)_this;
-}
-void FirmwareSaveFile::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void FirmwareSaveFile::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -2034,12 +1986,12 @@ void FirmwareSaveFile::Clear() {
   (void) cached_has_bits;
 
   servotuning_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _has_bits_.Clear();
+  _internal_metadata_.Clear();
 }
 
 const char* FirmwareSaveFile::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -2063,9 +2015,7 @@ const char* FirmwareSaveFile::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPA
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -2095,7 +2045,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:dexhand.FirmwareSaveFile)
   return target;
@@ -2143,7 +2093,7 @@ void FirmwareSaveFile::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void FirmwareSaveFile::MergeFrom(const FirmwareSaveFile& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:dexhand.FirmwareSaveFile)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2170,7 +2120,8 @@ bool FirmwareSaveFile::IsInitialized() const {
 
 void FirmwareSaveFile::InternalSwap(FirmwareSaveFile* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_has_bits_[0], other->_has_bits_[0]);
   servotuning_.InternalSwap(&other->servotuning_);
 }
 
@@ -2197,20 +2148,19 @@ class FirmwareVersion::_Internal {
   }
 };
 
-FirmwareVersion::FirmwareVersion(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+FirmwareVersion::FirmwareVersion()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:dexhand.FirmwareVersion)
+  // @@protoc_insertion_point(constructor:dexhand.FirmwareVersion)
 }
 FirmwareVersion::FirmwareVersion(const FirmwareVersion& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (from._internal_has_name()) {
-    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_name(),
-      GetArena());
+    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
   }
   ::memcpy(&major_, &from.major_,
     static_cast<size_t>(reinterpret_cast<char*>(&minor_) -
@@ -2229,20 +2179,12 @@ void FirmwareVersion::SharedCtor() {
 FirmwareVersion::~FirmwareVersion() {
   // @@protoc_insertion_point(destructor:dexhand.FirmwareVersion)
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void FirmwareVersion::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
   name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
-void FirmwareVersion::ArenaDtor(void* object) {
-  FirmwareVersion* _this = reinterpret_cast< FirmwareVersion* >(object);
-  (void)_this;
-}
-void FirmwareVersion::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void FirmwareVersion::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -2260,7 +2202,7 @@ void FirmwareVersion::Clear() {
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    name_.ClearNonDefaultToEmpty();
+    name_.ClearNonDefaultToEmptyNoArena();
   }
   if (cached_has_bits & 0x00000006u) {
     ::memset(&major_, 0, static_cast<size_t>(
@@ -2268,13 +2210,12 @@ void FirmwareVersion::Clear() {
         reinterpret_cast<char*>(&major_)) + sizeof(minor_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear();
 }
 
 const char* FirmwareVersion::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -2295,7 +2236,7 @@ const char* FirmwareVersion::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           _Internal::set_has_major(&has_bits);
-          major_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          major_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2303,7 +2244,7 @@ const char* FirmwareVersion::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
           _Internal::set_has_minor(&has_bits);
-          minor_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          minor_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2313,9 +2254,7 @@ const char* FirmwareVersion::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -2361,7 +2300,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:dexhand.FirmwareVersion)
   return target;
@@ -2426,14 +2365,15 @@ void FirmwareVersion::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void FirmwareVersion::MergeFrom(const FirmwareVersion& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:dexhand.FirmwareVersion)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 0x00000007u) {
     if (cached_has_bits & 0x00000001u) {
-      _internal_set_name(from._internal_name());
+      _has_bits_[0] |= 0x00000001u;
+      name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
     }
     if (cached_has_bits & 0x00000002u) {
       major_ = from.major_;
@@ -2465,15 +2405,12 @@ bool FirmwareVersion::IsInitialized() const {
 
 void FirmwareVersion::InternalSwap(FirmwareVersion* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(FirmwareVersion, minor_)
-      + sizeof(FirmwareVersion::minor_)
-      - PROTOBUF_FIELD_OFFSET(FirmwareVersion, major_)>(
-          reinterpret_cast<char*>(&major_),
-          reinterpret_cast<char*>(&other->major_));
+  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(major_, other->major_);
+  swap(minor_, other->minor_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata FirmwareVersion::GetMetadata() const {
@@ -2502,16 +2439,16 @@ class ServoRegister::_Internal {
   }
 };
 
-ServoRegister::ServoRegister(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+ServoRegister::ServoRegister()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:dexhand.ServoRegister)
+  // @@protoc_insertion_point(constructor:dexhand.ServoRegister)
 }
 ServoRegister::ServoRegister(const ServoRegister& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::memcpy(&servoid_, &from.servoid_,
     static_cast<size_t>(reinterpret_cast<char*>(&size_) -
     reinterpret_cast<char*>(&servoid_)) + sizeof(size_));
@@ -2527,19 +2464,11 @@ void ServoRegister::SharedCtor() {
 ServoRegister::~ServoRegister() {
   // @@protoc_insertion_point(destructor:dexhand.ServoRegister)
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void ServoRegister::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
-void ServoRegister::ArenaDtor(void* object) {
-  ServoRegister* _this = reinterpret_cast< ServoRegister* >(object);
-  (void)_this;
-}
-void ServoRegister::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void ServoRegister::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -2562,13 +2491,12 @@ void ServoRegister::Clear() {
         reinterpret_cast<char*>(&servoid_)) + sizeof(size_));
   }
   _has_bits_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear();
 }
 
 const char* ServoRegister::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -2578,7 +2506,7 @@ const char* ServoRegister::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           _Internal::set_has_servoid(&has_bits);
-          servoid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          servoid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2586,7 +2514,7 @@ const char* ServoRegister::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           _Internal::set_has_address(&has_bits);
-          address_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          address_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2594,7 +2522,7 @@ const char* ServoRegister::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
           _Internal::set_has_value(&has_bits);
-          value_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          value_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2602,7 +2530,7 @@ const char* ServoRegister::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
           _Internal::set_has_size(&has_bits);
-          size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2612,9 +2540,7 @@ const char* ServoRegister::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -2662,7 +2588,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:dexhand.ServoRegister)
   return target;
@@ -2734,7 +2660,7 @@ void ServoRegister::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void ServoRegister::MergeFrom(const ServoRegister& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:dexhand.ServoRegister)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2776,14 +2702,12 @@ bool ServoRegister::IsInitialized() const {
 
 void ServoRegister::InternalSwap(ServoRegister* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(ServoRegister, size_)
-      + sizeof(ServoRegister::size_)
-      - PROTOBUF_FIELD_OFFSET(ServoRegister, servoid_)>(
-          reinterpret_cast<char*>(&servoid_),
-          reinterpret_cast<char*>(&other->servoid_));
+  swap(servoid_, other->servoid_);
+  swap(address_, other->address_);
+  swap(value_, other->value_);
+  swap(size_, other->size_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ServoRegister::GetMetadata() const {
@@ -2803,16 +2727,16 @@ class HandParams::_Internal {
   }
 };
 
-HandParams::HandParams(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+HandParams::HandParams()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
-  RegisterArenaDtor(arena);
-  // @@protoc_insertion_point(arena_constructor:dexhand.HandParams)
+  // @@protoc_insertion_point(constructor:dexhand.HandParams)
 }
 HandParams::HandParams(const HandParams& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr),
       _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   autothumbextensor_ = from.autothumbextensor_;
   // @@protoc_insertion_point(copy_constructor:dexhand.HandParams)
 }
@@ -2824,19 +2748,11 @@ void HandParams::SharedCtor() {
 HandParams::~HandParams() {
   // @@protoc_insertion_point(destructor:dexhand.HandParams)
   SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void HandParams::SharedDtor() {
-  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
-void HandParams::ArenaDtor(void* object) {
-  HandParams* _this = reinterpret_cast< HandParams* >(object);
-  (void)_this;
-}
-void HandParams::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
 void HandParams::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -2854,13 +2770,12 @@ void HandParams::Clear() {
 
   autothumbextensor_ = false;
   _has_bits_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  _internal_metadata_.Clear();
 }
 
 const char* HandParams::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
-  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -2870,7 +2785,7 @@ const char* HandParams::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
           _Internal::set_has_autothumbextensor(&has_bits);
-          autothumbextensor_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          autothumbextensor_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2880,9 +2795,7 @@ const char* HandParams::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID:
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag,
-            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-            ptr, ctx);
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -2912,7 +2825,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+        _internal_metadata_.unknown_fields(), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:dexhand.HandParams)
   return target;
@@ -2959,7 +2872,7 @@ void HandParams::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void HandParams::MergeFrom(const HandParams& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:dexhand.HandParams)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2988,7 +2901,7 @@ bool HandParams::IsInitialized() const {
 
 void HandParams::InternalSwap(HandParams* other) {
   using std::swap;
-  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   swap(autothumbextensor_, other->autothumbextensor_);
 }
@@ -3002,31 +2915,31 @@ void HandParams::InternalSwap(HandParams* other) {
 }  // namespace dexhand
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::dexhand::ServoStatus* Arena::CreateMaybeMessage< ::dexhand::ServoStatus >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::dexhand::ServoStatus >(arena);
+  return Arena::CreateInternal< ::dexhand::ServoStatus >(arena);
 }
 template<> PROTOBUF_NOINLINE ::dexhand::ServoStatusList* Arena::CreateMaybeMessage< ::dexhand::ServoStatusList >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::dexhand::ServoStatusList >(arena);
+  return Arena::CreateInternal< ::dexhand::ServoStatusList >(arena);
 }
 template<> PROTOBUF_NOINLINE ::dexhand::ServoVars* Arena::CreateMaybeMessage< ::dexhand::ServoVars >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::dexhand::ServoVars >(arena);
+  return Arena::CreateInternal< ::dexhand::ServoVars >(arena);
 }
 template<> PROTOBUF_NOINLINE ::dexhand::ServoVarsList* Arena::CreateMaybeMessage< ::dexhand::ServoVarsList >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::dexhand::ServoVarsList >(arena);
+  return Arena::CreateInternal< ::dexhand::ServoVarsList >(arena);
 }
 template<> PROTOBUF_NOINLINE ::dexhand::ServoTuning* Arena::CreateMaybeMessage< ::dexhand::ServoTuning >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::dexhand::ServoTuning >(arena);
+  return Arena::CreateInternal< ::dexhand::ServoTuning >(arena);
 }
 template<> PROTOBUF_NOINLINE ::dexhand::FirmwareSaveFile* Arena::CreateMaybeMessage< ::dexhand::FirmwareSaveFile >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::dexhand::FirmwareSaveFile >(arena);
+  return Arena::CreateInternal< ::dexhand::FirmwareSaveFile >(arena);
 }
 template<> PROTOBUF_NOINLINE ::dexhand::FirmwareVersion* Arena::CreateMaybeMessage< ::dexhand::FirmwareVersion >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::dexhand::FirmwareVersion >(arena);
+  return Arena::CreateInternal< ::dexhand::FirmwareVersion >(arena);
 }
 template<> PROTOBUF_NOINLINE ::dexhand::ServoRegister* Arena::CreateMaybeMessage< ::dexhand::ServoRegister >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::dexhand::ServoRegister >(arena);
+  return Arena::CreateInternal< ::dexhand::ServoRegister >(arena);
 }
 template<> PROTOBUF_NOINLINE ::dexhand::HandParams* Arena::CreateMaybeMessage< ::dexhand::HandParams >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::dexhand::HandParams >(arena);
+  return Arena::CreateInternal< ::dexhand::HandParams >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 
