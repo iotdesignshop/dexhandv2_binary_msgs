@@ -24,6 +24,7 @@ else()
 endif()
 
 file(MAKE_DIRECTORY ${PROTO_OUTPUT_DIR})
+file(MAKE_DIRECTORY ${PROTO_PYTHON_OUTPUT_DIR})
 
 # Define files
 file(GLOB_RECURSE PROTO_FILES "${CMAKE_CURRENT_SOURCE_DIR}/proto/*.proto")
