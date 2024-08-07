@@ -141,9 +141,13 @@ message ServoRegister
 * HandParams is a message that contains global parameters or settings for the hand
 * 
 * bool autoThumbExtensor: Whether the thumb extensor should be automatically controlled by the firmware
+* uint32 mediumPriorityTimerMS: The time in milliseconds for the medium priority timer - this reports servo dynamics messages
+* uint32 lowPriorityTimerMS: The time in milliseconds for the low priority timer - this reports full servo status messages
 */
 message HandParams
 {
     optional bool autoThumbExtensor = 1;
+    optional uint32 mediumPriorityTimerMS = 2;
+    optional uint32 lowPriorityTimerMS = 3;
 }
 
